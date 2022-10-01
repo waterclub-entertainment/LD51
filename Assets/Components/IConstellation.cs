@@ -9,7 +9,7 @@ public interface IConstellation {
 	}
 
 	// Return true iff star is used in this constellation
-	public bool ConstainStar(int id);
+	public bool ContainsStar(int id);
 	
 	// Return all connections
 	public Connection[] GetConnections();
