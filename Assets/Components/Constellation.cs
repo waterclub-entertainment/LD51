@@ -111,13 +111,29 @@ public class Constellation : MonoBehaviour
         if (lines.ContainsKey(c)) {
             return false;
         }
+        Vector3 from = starReference[c.from].transform.position;
+        Vector3 to = starReference[c.to].transform.position;
         GameObject line = GameObject.Instantiate(linePrefab, transform);
+        line.transform.position = from;
+        line.transform.LookAt(to, Vector3.up);
+        line.transform.localScale = new Vector3(1, 1, (from - to).magnitude);
         LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
-        lineRenderer.SetPosition(0, starReference[c.from].transform.position);
-        lineRenderer.SetPosition(1, starReference[c.to].transform.position);
+        lineRenderer.SetPosition(0, from);
+        lineRenderer.SetPosition(1, to);
         lineRenderer.widthMultiplier = lineWidth;
         lines.Add(c, line);
         return true;
+    }
+    
+    public bool RemoveConnection(GameObject line) {
+        foreach (KeyValuePair<Connection, GameObject> pair in lines) {
+            if (pair.Value == line) {
+                lines.Remove(pair.Key);
+                GameObject.Destroy(line);
+                return true;
+            }
+        }
+        return false;
     }
     
     public void Clear() {
