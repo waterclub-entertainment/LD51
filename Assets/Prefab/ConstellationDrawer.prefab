@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 999839463132559921}
   - component: {fileID: 999839463132559927}
   - component: {fileID: 999839463132559922}
+  - component: {fileID: 2448347224458561329}
   m_Layer: 0
   m_Name: ConstellationDrawer
   m_TagString: Untagged
@@ -160,6 +161,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &2448347224458561329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999839463132559926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fdb0b9cad408cb478771181e2b6aa18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NodeGizmoSize: 0
+  Connections: []
+  root: {fileID: 2189392544456641364}
+  linePrefab: {fileID: 2543561570165699951, guid: de6aef4f9ef397141b52dfbb01c8d1d1, type: 3}
 --- !u!1001 &6626889702930275144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,8 +232,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stars
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3612801708027250411, guid: 0e2d2c6a3ee31214c8958be3af2d0cd1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0e2d2c6a3ee31214c8958be3af2d0cd1, type: 3}
+--- !u!1 &2189392544456641364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5013977504489164828, guid: 0e2d2c6a3ee31214c8958be3af2d0cd1, type: 3}
+  m_PrefabInstance: {fileID: 6626889702930275144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6796990414714809217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 406647606095507657, guid: 0e2d2c6a3ee31214c8958be3af2d0cd1, type: 3}
