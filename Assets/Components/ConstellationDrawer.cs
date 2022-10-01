@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(LineRenderer))]
 [RequireComponent(typeof(Constellation))]
@@ -41,7 +42,7 @@ public class ConstellationDrawer : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
             if (mousePosition != null) {
                 Star starAtMouse = StarAt(mousePosition);
-                if (starAtMouse == null) {
+                if (starAtMouse == null && lastStar != null) {
                     starAtMouse = StarOnLine(lastStar.transform.position, mousePosition);
                 }
                 if (starAtMouse != null && starAtMouse != lastStar) {
@@ -128,6 +129,7 @@ public class ConstellationDrawer : MonoBehaviour {
         if (nextConstellation >= constellations.Length) {
             // TODO: Win or sth
             Debug.Log("WIN");
+            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
             return;
         }
         LoadConstellation(nextConstellation);
