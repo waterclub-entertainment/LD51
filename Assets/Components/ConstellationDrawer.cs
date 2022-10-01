@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(LineRenderer))]
 [RequireComponent(typeof(Constellation))]
@@ -41,7 +42,7 @@ public class ConstellationDrawer : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
             if (mousePosition != null) {
                 Star starAtMouse = StarAt(mousePosition);
-                if (starAtMouse == null) {
+                if (starAtMouse == null && lastStar != null) {
                     starAtMouse = StarOnLine(lastStar.transform.position, mousePosition);
                 }
                 if (starAtMouse != null && starAtMouse != lastStar) {
@@ -128,6 +129,7 @@ public class ConstellationDrawer : MonoBehaviour {
         if (nextConstellation >= constellations.Length) {
             // TODO: Win or sth
             Debug.Log("WIN");
+            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
             return;
         }
         LoadConstellation(nextConstellation);
@@ -135,7 +137,12 @@ public class ConstellationDrawer : MonoBehaviour {
     }
     
     private void LoadConstellation(int index) {
-        if (referenceConstellation != null) {
+        if (referenceConstellation != null)
+        {
+            foreach (Star star in referenceConstellation.usedStars)
+            {
+                star.gameObject.GetComponent<SphereCollider>().radius = 0;
+            }
             GameObject.Destroy(referenceConstellation.gameObject);
         }
         constellation.Clear();
@@ -148,9 +155,8 @@ public class ConstellationDrawer : MonoBehaviour {
         referenceConstellation.root = constellation.root;
         referenceConstellation.SetLineWidth(0.1f);
 
-        foreach (Transform child in constellation.root.transform) {
-            child.gameObject.SetActive(
-                referenceConstellation.usedStars.Contains(child.GetComponent<Star>()));
+        foreach (Star star in referenceConstellation.usedStars) {
+            star.gameObject.GetComponent<SphereCollider>().radius = 0.5f;
         }
     }
 }
