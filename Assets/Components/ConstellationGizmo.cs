@@ -10,7 +10,7 @@ public class Connection
     public int from, to;
 }
 
-public class Constellation : MonoBehaviour
+public class ConstellationGizmo : MonoBehaviour
 {
     private Graph<int, float> graph;
 
