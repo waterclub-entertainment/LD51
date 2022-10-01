@@ -8,6 +8,7 @@ public class ConstellationDrawer : MonoBehaviour {
     public GameObject linePrefab;
     public GameObject[] constellations;
     
+    private Dictionary<IConstellation.Connection, GameObject> lines;
     private List<GameObject> stars;
     private GameObject currentConstellation = null;
     private GameObject lastStar = null;
@@ -17,8 +18,10 @@ public class ConstellationDrawer : MonoBehaviour {
     
     void Start() {
         stars = new List<GameObject>();
+        lines = new Dictionary<IConstellation.Connection, GameObject>(new IConstellation.ConnectionComparer());
         starPlane = new Plane(Vector3.up, transform.position);
         lineRenderer = GetComponent<LineRenderer>();
+        LoadNextConstellation();
     }
     
     void Update() {
@@ -29,10 +32,21 @@ public class ConstellationDrawer : MonoBehaviour {
                 if (starAtMouse != null && starAtMouse != lastStar) {
                     if (lastStar != null) {
                         // TODO: Add connection between stars
-                        GameObject newLine = GameObject.Instantiate(linePrefab, transform);
-                        LineRenderer newLineRenderer = newLine.GetComponent<LineRenderer>();
-                        newLineRenderer.SetPosition(0, lastStar.transform.position);
-                        newLineRenderer.SetPosition(1, starAtMouse.transform.position);
+                        IConstellation.Connection connection = new IConstellation.Connection();
+                        connection.from = lastStar.GetComponent<Star>().ID;
+                        connection.to = starAtMouse.GetComponent<Star>().ID;
+                        Debug.Log(connection.from + ", " + connection.to);
+                        
+                        if (!lines.ContainsKey(connection)) {
+                            GameObject newLine = GameObject.Instantiate(linePrefab, transform);
+                            LineRenderer newLineRenderer = newLine.GetComponent<LineRenderer>();
+                            newLineRenderer.SetPosition(0, lastStar.transform.position);
+                            newLineRenderer.SetPosition(1, starAtMouse.transform.position);
+                            lines.Add(connection, newLine);
+                            if (ConstellationMatches()) {
+                                LoadNextConstellation();
+                            }
+                        }
                     }
                     lastStar = starAtMouse;
                     lineRenderer.enabled = true;
@@ -74,9 +88,28 @@ public class ConstellationDrawer : MonoBehaviour {
         }
     }
     
+    private bool ConstellationMatches() {
+        IConstellation constellation = currentConstellation.GetComponent<IConstellation>();
+
+        foreach (IConstellation.Connection line in lines.Keys) {
+            if (!constellation.HasConnection(line.from, line.to)) {
+                return false;
+            }
+        }
+        
+        foreach (IConstellation.Connection connection in constellation.GetConnections()) {
+            if (!lines.ContainsKey(connection)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+   
     private void LoadNextConstellation() {
         if (nextConstellation >= constellations.Length) {
             // TODO: Win or sth
+            Debug.Log("WIN");
             return;
         }
         LoadConstellation(nextConstellation);
@@ -87,14 +120,20 @@ public class ConstellationDrawer : MonoBehaviour {
         if (currentConstellation != null) {
             GameObject.Destroy(currentConstellation);
         }
+        foreach (GameObject line in lines.Values) {
+            GameObject.Destroy(line);
+        }
+        lines.Clear();
+        stars.Clear();
+
         currentConstellation = GameObject.Instantiate(constellations[index], transform);
         
-        IConstellation constellation = currentConstellation.GetComponent<IConstellation>();
-        
-        stars.Clear();
+        Constellation constellation = currentConstellation.GetComponent<Constellation>();
+        constellation.root = transform.Find("Stars").gameObject;
+       
         foreach (Transform child in transform.Find("Stars")) {
             Star star = child.GetComponent<Star>();
-            if (constellation.ConstainStar(star.ID)) {
+            if (constellation.ContainsStar(star.ID)) {
                 stars.Add(child.gameObject);
             }
         }
