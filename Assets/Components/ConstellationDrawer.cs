@@ -62,10 +62,16 @@ public class ConstellationDrawer : MonoBehaviour {
     }
     
     private Star StarAt(Vector3 position) {
-        float closestDistanceSq = starRadius * starRadius;
+        int layerMask = 1 << 6; // Only stars
+        Collider[] colliders = Physics.OverlapSphere(position, 0, layerMask);
+        float closestDistanceSq = Mathf.Infinity;
         Star closestStar = null;
-        foreach (Star star in referenceConstellation.usedStars) {
-            float distanceSq = (star.transform.position - position).sqrMagnitude;
+        foreach (Collider collider in colliders) {
+            Star star = collider.gameObject.GetComponent<Star>();
+            if (!referenceConstellation.usedStars.Contains(star)) {
+                continue;
+            }
+            float distanceSq = (collider.transform.position - position).sqrMagnitude;
             if (distanceSq < closestDistanceSq) {
                 closestStar = star;
                 closestDistanceSq = distanceSq;
