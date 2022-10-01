@@ -91,7 +91,12 @@ public class Constellation : MonoBehaviour, IConstellation
     // Return true iff star is used in this constellation
     public bool ContainsStar(int id)
     {
-        return usedStars.Contains(id);
+        foreach (IConstellation.Connection connection in Connections) {
+            if (connection.from == id || connection.to == id) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // Return all connections

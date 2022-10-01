@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starRadius: 1
   linePrefab: {fileID: 2543561570165699951, guid: de6aef4f9ef397141b52dfbb01c8d1d1, type: 3}
-  constellations: []
+  constellations:
+  - {fileID: 5247665172992551100, guid: cf879dbb73e9ee948a1019caa96d9688, type: 3}
 --- !u!120 &999839463132559922
 LineRenderer:
   m_ObjectHideFlags: 0

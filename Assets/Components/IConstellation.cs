@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public interface IConstellation {
 
@@ -8,8 +9,22 @@ public interface IConstellation {
 	    public int from, to;
 	}
 
-	// Return true iff star is used in this constellation
-	public bool ContainsStar(int id);
+    public class ConnectionComparer : IEqualityComparer<Connection>
+    {
+
+        bool IEqualityComparer<Connection>.Equals(Connection x, Connection y)
+        {
+            return (x.from == y.from && x.to == y.to) || (x.from == y.to && x.to == y.from);
+        }
+
+        int IEqualityComparer<Connection>.GetHashCode(Connection obj)
+        {
+			return Math.Min(obj.from, obj.to) * 1000 + Math.Max(obj.from, obj.to);
+        }
+    }
+
+    // Return true iff star is used in this constellation
+    public bool ContainsStar(int id);
 	
 	// Return all connections
 	public Connection[] GetConnections();
