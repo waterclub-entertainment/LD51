@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeGizmoSize: 0
   Connections:
-  - from: 60
+  - from: 50
     to: 38
   - from: 38
     to: 39
