@@ -90,6 +90,7 @@ public class Constellation : MonoBehaviour
                 }
             }
         }
+#if UNITY_EDITOR
         foreach (var node in _starReference.Values)
         {
              Gizmos.color = node.getColor();
@@ -98,6 +99,7 @@ public class Constellation : MonoBehaviour
              Handles.color = Color.white;
              Handles.Label(node.getPosition() + new Vector3(NodeGizmoSize, 0, NodeGizmoSize), node.getValue().ToString());
         }
+#endif
         foreach (Constellation.Connection c in Connections)
         {
             Gizmos.color = Color.cyan;
