@@ -6,12 +6,12 @@ public interface INode {
     public Vector3 getPosition();
 }
 
-public interface Node<TNodeType> : INode
+public interface BaseNode<TNodeType> : INode
 {
     public TNodeType getValue();
     public void setValue(TNodeType t);
 
-    public Color getValue();
+    public Color getColor();
 }
 
 public class Edge<TEdgeType>
@@ -28,9 +28,9 @@ public class Graph<TNodeType, TEdgeType>
 {
     public Graph()
     {
-        Nodes = new List<Node<TNodeType>>();
+        Nodes = new List<BaseNode<TNodeType>>();
         Edges = new List<Edge<TEdgeType>>();
     }
-    public List<Node<TNodeType>> Nodes { get; private set; }
+    public List<BaseNode<TNodeType>> Nodes { get; private set; }
     public List<Edge<TEdgeType>> Edges { get; private set; }
 }

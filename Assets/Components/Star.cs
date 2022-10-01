@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Star : MonoBehaviour, Node<int>
+public class Star : MonoBehaviour, BaseNode<int>
 {
     public int ID = -1;
 
@@ -14,7 +14,7 @@ public class Star : MonoBehaviour, Node<int>
 
     public Vector3 getPosition()
     {
-        return this.transfrom.position;
+        return this.transform.position;
     }
 
     public int getValue()
@@ -26,7 +26,7 @@ public class Star : MonoBehaviour, Node<int>
         ID = data;
     }
 
-    public Color getValue()
+    public Color getColor()
     {
         return Color.cyan;
     }
