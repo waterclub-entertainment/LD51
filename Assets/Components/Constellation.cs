@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System;
 
 
@@ -76,14 +77,27 @@ public class Constellation : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        // foreach (var node in graph.Nodes)
-        // {
-        //     Gizmos.color = node.getColor();
-        //     Gizmos.DrawSphere(node.getPosition(), NodeGizmoSize);
+        if (_starReference == null)
+        {
+            _starReference = new Dictionary<int, Star>();
+            var r = root ? root : gameObject;
+            foreach (Transform child in r.transform)
+            {
+                Star obj = child.gameObject.GetComponent<Star>();
+                if (obj != null)
+                {
+                    _starReference.Add(obj.getValue(), obj);
+                }
+            }
+        }
+        foreach (var node in _starReference.Values)
+        {
+             Gizmos.color = node.getColor();
+             Gizmos.DrawSphere(node.getPosition(), NodeGizmoSize);
 
-        //     Handles.color = Color.black;
-        //     Handles.Label(node.getPosition() + new Vector3(NodeGizmoSize, 0, NodeGizmoSize), node.getValue().ToString());
-        // }
+             Handles.color = Color.white;
+             Handles.Label(node.getPosition() + new Vector3(NodeGizmoSize, 0, NodeGizmoSize), node.getValue().ToString());
+        }
         foreach (Constellation.Connection c in Connections)
         {
             Gizmos.color = Color.cyan;
