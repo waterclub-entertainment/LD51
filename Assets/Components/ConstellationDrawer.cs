@@ -137,7 +137,12 @@ public class ConstellationDrawer : MonoBehaviour {
     }
     
     private void LoadConstellation(int index) {
-        if (referenceConstellation != null) {
+        if (referenceConstellation != null)
+        {
+            foreach (Star star in referenceConstellation.usedStars)
+            {
+                star.gameObject.GetComponent<SphereCollider>().radius = 0;
+            }
             GameObject.Destroy(referenceConstellation.gameObject);
         }
         constellation.Clear();
@@ -150,9 +155,8 @@ public class ConstellationDrawer : MonoBehaviour {
         referenceConstellation.root = constellation.root;
         referenceConstellation.SetLineWidth(0.1f);
 
-        foreach (Transform child in constellation.root.transform) {
-            child.gameObject.SetActive(
-                referenceConstellation.usedStars.Contains(child.GetComponent<Star>()));
+        foreach (Star star in referenceConstellation.usedStars) {
+            star.gameObject.GetComponent<SphereCollider>().radius = 0.5f;
         }
     }
 }
