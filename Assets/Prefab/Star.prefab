@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6241286651300468450}
   - component: {fileID: 5984969265266028620}
-  m_Layer: 0
+  - component: {fileID: 6403748585418768525}
+  m_Layer: 6
   m_Name: Star
   m_TagString: star
   m_Icon: {fileID: 0}
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+--- !u!135 &6403748585418768525
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051530476232402485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}

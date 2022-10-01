@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2977476022495823267}
   - component: {fileID: 7767537222178933272}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ConstellationLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
