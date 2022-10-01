@@ -25,6 +25,24 @@ public class ConstellationDrawer : MonoBehaviour {
         LoadNextConstellation();
     }
     
+    public void OnDusk()
+    {
+        Constellation co = constellation ? constellation : referenceConstellation;
+        foreach (Transform child in co.root.transform)
+        {
+            child.gameObject.GetComponent<ParticleSystem>().Play();
+        }
+    }
+    public void OnDawn()
+    {
+        Constellation co = constellation ? constellation : referenceConstellation;
+        foreach (Transform child in co.root.transform)
+        {
+            child.gameObject.GetComponent<ParticleSystem>().Pause();
+        }
+    }
+
+
     void Update() {
         Vector3 mousePosition = MousePosition();
         if (Input.GetMouseButtonDown(0)) {
@@ -139,10 +157,6 @@ public class ConstellationDrawer : MonoBehaviour {
     private void LoadConstellation(int index) {
         if (referenceConstellation != null)
         {
-            foreach (Star star in referenceConstellation.usedStars)
-            {
-                star.gameObject.GetComponent<SphereCollider>().radius = 0;
-            }
             GameObject.Destroy(referenceConstellation.gameObject);
         }
         constellation.Clear();
