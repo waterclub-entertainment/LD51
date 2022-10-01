@@ -7,6 +7,7 @@ public class ConstellationDrawer : MonoBehaviour {
     public float starRadius = 1f;
     public GameObject linePrefab;
     public GameObject[] constellations;
+    public float clickTime = 0.25f;
     
     private Constellation constellation;
     private Constellation referenceConstellation = null;
@@ -14,6 +15,7 @@ public class ConstellationDrawer : MonoBehaviour {
     private Plane starPlane;
     private LineRenderer lineRenderer;
     private int nextConstellation = 0;
+    private float mouseDownTime = 0;
     
     void Start() {
         constellation = GetComponent<Constellation>();
@@ -23,8 +25,20 @@ public class ConstellationDrawer : MonoBehaviour {
     }
     
     void Update() {
+        Vector3 mousePosition = MousePosition();
+        if (Input.GetMouseButtonDown(0)) {
+            mouseDownTime = Time.unscaledTime;
+        }
+        if (Input.GetMouseButtonUp(0) && Time.unscaledTime - mouseDownTime <= clickTime) {
+            GameObject lineAtMouse = LineAt(mousePosition);
+            if (lineAtMouse != null) {
+                constellation.RemoveConnection(lineAtMouse);
+                if (constellation.Matches(referenceConstellation)) {
+                    LoadNextConstellation();
+                }
+            }
+        }
         if (Input.GetMouseButton(0)) {
-            Vector3 mousePosition = MousePosition();
             if (mousePosition != null) {
                 Star starAtMouse = StarAt(mousePosition);
                 if (starAtMouse != null && starAtMouse != lastStar) {
@@ -45,7 +59,7 @@ public class ConstellationDrawer : MonoBehaviour {
                 }
                 lineRenderer.SetPosition(1, mousePosition);
             }
-        } 
+        }
         if (Input.GetMouseButtonUp(0)) {
             GetComponent<LineRenderer>().enabled = false;
             lastStar = null;
@@ -83,6 +97,18 @@ public class ConstellationDrawer : MonoBehaviour {
         } else {
             return null;
         }
+    }
+    
+    private GameObject LineAt(Vector3 position) {
+        int layerMask = 1 << 7; // Only lines
+        Collider[] colliders = Physics.OverlapSphere(position, 0, layerMask);
+        foreach (Collider collider in colliders) {
+            if (collider.transform.parent == transform) {
+                return collider.gameObject;
+            }
+        }
+        
+        return null;
     }
     
     private void LoadNextConstellation() {
