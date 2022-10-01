@@ -1,121 +1,139 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System;
 
 
-public class Constellation : MonoBehaviour, IConstellation
+public class Constellation : MonoBehaviour
 {
-    private Graph<int, float> graph;
+	[Serializable]
+	public class Connection
+	{
+	    public int from, to;
+	}
+
+    public class ConnectionComparer : IEqualityComparer<Connection>
+    {
+
+        bool IEqualityComparer<Connection>.Equals(Connection x, Connection y)
+        {
+            return (x.from == y.from && x.to == y.to) || (x.from == y.to && x.to == y.from);
+        }
+
+        int IEqualityComparer<Connection>.GetHashCode(Connection obj)
+        {
+			return Math.Min(obj.from, obj.to) * 1000 + Math.Max(obj.from, obj.to);
+        }
+    }
 
     public float NodeGizmoSize;
-    public IConstellation.Connection[] Connections;
+    public Constellation.Connection[] Connections = new Connection[0];
     public GameObject root;
+    public GameObject linePrefab;
 
-    private Dictionary<int, Star> starReference;
-    private HashSet<int> usedStars;
-
+    private Dictionary<int, Star> _starReference;
+    public Dictionary<int, Star> starReference {
+        get {
+            if (_starReference == null) {
+                _starReference = new Dictionary<int, Star>();
+                var r = root ? root : gameObject;
+                foreach (Transform child in r.transform)
+                {
+                    Star obj = child.gameObject.GetComponent<Star>();
+                    if (obj != null)
+                    {
+                        _starReference.Add(obj.getValue(), obj);
+                    }
+                }
+            }
+            return _starReference;
+        }
+    }
+    private HashSet<Star> _usedStars;
+    public HashSet<Star> usedStars {
+        get {
+            if (_usedStars == null) {
+                _usedStars = new HashSet<Star>();
+                foreach (Connection c in Connections)
+                {
+                    _usedStars.Add(starReference[c.from]);
+                    _usedStars.Add(starReference[c.to]);
+                }
+            }
+            return _usedStars;
+        }
+    }
+    private Dictionary<Constellation.Connection, GameObject> lines;
+    private float lineWidth = 0.2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        graph = new Graph<int, float>();
-        starReference = new Dictionary<int, Star>();
-        usedStars = new HashSet<int>();
-        //collect child star objects
-        var r = root ? root : gameObject;
-        foreach (Transform child in r.transform)
-        {
-            Star obj = child.gameObject.GetComponent<Star>();
-            if (obj != null)
-            {
-                starReference.Add(obj.getValue(), obj);
-                graph.Nodes.Add(obj);
-            }
-        }
-
-        foreach (IConstellation.Connection c in Connections)
-        {
-            usedStars.Add(c.from);
-            usedStars.Add(c.to);
-
-            INode fromNode = starReference[c.from];
-            INode toNode = starReference[c.to];
-            if (fromNode != null && toNode != null)
-            {
-                graph.Edges.Add(new Edge<float>()
-                {
-                    GizmoColor = Color.red,
-                    Value = 1.0f,
-                    From = fromNode,
-                    To = toNode
-                });
-            }
-            else
-            {
-                Debug.Log("Failed to add Connection from " + c.from.ToString() + " to " + c.to.ToString());
-            }
+        lines = new Dictionary<Constellation.Connection, GameObject>(new Constellation.ConnectionComparer());
+        foreach (Constellation.Connection c in Connections) {
+            AddConnection(c);
         }
     }
 
     void OnDrawGizmos()
     {
-        //sadly this will have to be redone each time as critical data may change
-        //if (graph == null)
+        // foreach (var node in graph.Nodes)
+        // {
+        //     Gizmos.color = node.getColor();
+        //     Gizmos.DrawSphere(node.getPosition(), NodeGizmoSize);
+
+        //     Handles.color = Color.black;
+        //     Handles.Label(node.getPosition() + new Vector3(NodeGizmoSize, 0, NodeGizmoSize), node.getValue().ToString());
+        // }
+        foreach (Constellation.Connection c in Connections)
         {
-            Start();
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(starReference[c.from].transform.position, starReference[c.to].transform.position);
         }
-
-        foreach (var node in graph.Nodes)
-        {
-            Gizmos.color = node.getColor();
-            Gizmos.DrawSphere(node.getPosition(), NodeGizmoSize);
-
-            Handles.color = Color.black;
-            Handles.Label(node.getPosition() + new Vector3(NodeGizmoSize, 0, NodeGizmoSize), node.getValue().ToString());
-        }
-        foreach (var edge in graph.Edges)
-        {
-            Gizmos.color = edge.GizmoColor;
-            Gizmos.DrawLine(edge.From.getPosition(), edge.To.getPosition());
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    // Return true iff star is used in this constellation
-    public bool ContainsStar(int id)
-    {
-        foreach (IConstellation.Connection connection in Connections) {
-            if (connection.from == id || connection.to == id) {
-                return true;
-            }
-        }
-        return false;
     }
 
     // Return all connections
-    public IConstellation.Connection[] GetConnections()
+    public bool Matches(Constellation other)
     {
-        return Connections;
-    }
-
-    // Return true iff there is a connection between stars with ids `from` and `to`
-    // (or the other way round)
-    public bool HasConnection(int from, int to)
-    {
-        foreach (IConstellation.Connection c in Connections)
-        {
-            if ((c.from == from && c.to == to) || (c.to == from && c.from == to))
-            {
-                return true;
+        if (lines.Count != other.lines.Count) {
+            return false;
+        }
+        
+        foreach (Connection c in lines.Keys) {
+            if (!other.lines.ContainsKey(c)) {
+                return false;
             }
         }
-        return false;
+
+        return true;
     }
+    
+    public bool AddConnection(Connection c) {
+        if (lines.ContainsKey(c)) {
+            return false;
+        }
+        GameObject line = GameObject.Instantiate(linePrefab, transform);
+        LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
+        lineRenderer.SetPosition(0, starReference[c.from].transform.position);
+        lineRenderer.SetPosition(1, starReference[c.to].transform.position);
+        lineRenderer.widthMultiplier = lineWidth;
+        lines.Add(c, line);
+        return true;
+    }
+    
+    public void Clear() {
+        foreach (GameObject line in lines.Values) {
+            GameObject.Destroy(line);
+        }
+        lines.Clear();
+    }
+    
+    public void SetLineWidth(float lineWidth) {
+        this.lineWidth = lineWidth;
+        if (lines != null) {
+            foreach (GameObject line in lines.Values) {
+                line.GetComponent<LineRenderer>().widthMultiplier = lineWidth;
+            }
+        }
+    }
+
 }

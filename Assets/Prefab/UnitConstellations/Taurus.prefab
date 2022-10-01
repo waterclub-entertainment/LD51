@@ -65,3 +65,4 @@ MonoBehaviour:
   - from: 59
     to: 58
   root: {fileID: 0}
+  linePrefab: {fileID: 2543561570165699951, guid: de6aef4f9ef397141b52dfbb01c8d1d1, type: 3}
