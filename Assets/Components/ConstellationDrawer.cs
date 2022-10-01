@@ -41,6 +41,9 @@ public class ConstellationDrawer : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
             if (mousePosition != null) {
                 Star starAtMouse = StarAt(mousePosition);
+                if (starAtMouse == null) {
+                    starAtMouse = StarOnLine(lastStar.transform.position, mousePosition);
+                }
                 if (starAtMouse != null && starAtMouse != lastStar) {
                     if (lastStar != null) {
                         Constellation.Connection connection = new Constellation.Connection();
@@ -50,6 +53,7 @@ public class ConstellationDrawer : MonoBehaviour {
                         if (constellation.AddConnection(connection)) {
                             if (constellation.Matches(referenceConstellation)) {
                                 LoadNextConstellation();
+                                return;
                             }
                         }
                     }
@@ -82,9 +86,6 @@ public class ConstellationDrawer : MonoBehaviour {
         Star closestStar = null;
         foreach (Collider collider in colliders) {
             Star star = collider.gameObject.GetComponent<Star>();
-            if (!referenceConstellation.usedStars.Contains(star)) {
-                continue;
-            }
             float distanceSq = (collider.transform.position - position).sqrMagnitude;
             if (distanceSq < closestDistanceSq) {
                 closestStar = star;
@@ -97,6 +98,18 @@ public class ConstellationDrawer : MonoBehaviour {
         } else {
             return null;
         }
+    }
+    
+    private Star StarOnLine(Vector3 from, Vector3 to) {
+        int layerMask = 1 << 6; // Only stars
+        
+        RaycastHit hitInfo;
+
+        if (Physics.Linecast(from, to, out hitInfo, layerMask)) {
+            return hitInfo.transform.GetComponent<Star>();
+        }
+        
+        return null;
     }
     
     private GameObject LineAt(Vector3 position) {
@@ -126,11 +139,18 @@ public class ConstellationDrawer : MonoBehaviour {
             GameObject.Destroy(referenceConstellation.gameObject);
         }
         constellation.Clear();
+        lastStar = null;
+        lineRenderer.enabled = false;
 
         GameObject reference = GameObject.Instantiate(constellations[index], transform);
         
         referenceConstellation = reference.GetComponent<Constellation>();
         referenceConstellation.root = constellation.root;
         referenceConstellation.SetLineWidth(0.1f);
+
+        foreach (Transform child in constellation.root.transform) {
+            child.gameObject.SetActive(
+                referenceConstellation.usedStars.Contains(child.GetComponent<Star>()));
+        }
     }
 }
