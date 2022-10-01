@@ -920,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_CastShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_StaticShadowCaster
@@ -929,13 +929,17 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0afabf2477c6b544b949f2555359d8ff, type: 2}
+      objectReference: {fileID: 2100000, guid: 96baa2ddede53404cb25821dfd1dc659, type: 2}
     - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: fb03e906db19ece4c8e9c3eae043db11, type: 2}
+      objectReference: {fileID: 2100000, guid: 8d45695b6d935c14aa760f228e70691d, type: 2}
     - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb03e906db19ece4c8e9c3eae043db11, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: 1bb4a8f51d046064196ec5177d157f4b, type: 2}
     - target: {fileID: -7423503511491485764, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
@@ -950,6 +954,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: -3584497630037689987, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96baa2ddede53404cb25821dfd1dc659, type: 2}
+    - target: {fileID: -3584497630037689987, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b083ecf839902645aa18742fb916eb9, type: 2}
     - target: {fileID: -1198971101476617026, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -960,7 +972,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0f9351c46619dd842b3147178d2293cc, type: 2}
     - target: {fileID: 919132149155446097, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Name
-      value: Cathedral (2)
+      value: Cathedral_Real
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1695,6 +1707,10 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
+      objectReference: {fileID: 2100000, guid: fb03e906db19ece4c8e9c3eae043db11, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
       objectReference: {fileID: 2100000, guid: 6b083ecf839902645aa18742fb916eb9, type: 2}
     - target: {fileID: -7423503511491485764, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1718,7 +1734,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0f9351c46619dd842b3147178d2293cc, type: 2}
     - target: {fileID: 919132149155446097, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_Name
-      value: Cathedral (1)
+      value: Cathedral_Shadows
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8fa0a59491f8b344cb24bb596713536d, type: 3}
       propertyPath: m_StaticEditorFlags
