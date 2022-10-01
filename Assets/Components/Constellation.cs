@@ -13,6 +13,7 @@ public class Constellation : MonoBehaviour
 {
     private Graph<int, float> graph;
 
+    public float NodeGizmoSize;
     public Connection[] Connections;
 
 
@@ -55,7 +56,8 @@ public class Constellation : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (graph == null)
+        //sadly this will have to be redone each time as critical data may change
+        //if (graph == null)
         {
             Start();
         }
@@ -63,7 +65,7 @@ public class Constellation : MonoBehaviour
         foreach (var node in graph.Nodes)
         {
             Gizmos.color = node.getColor();
-            Gizmos.DrawSphere(node.getPosition(), 0.125f);
+            Gizmos.DrawSphere(node.getPosition(), NodeGizmoSize);
         }
         foreach (var edge in graph.Edges)
         {
