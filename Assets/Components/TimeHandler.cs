@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeHandler : MonoBehaviour
 {
-    public GameObject StarHandler;
+    public GameObject StarRoot;
 
     // Start is called before the first frame update
     void Start()
@@ -15,16 +15,17 @@ public class TimeHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 
     void TriggerDusk()
     {
-        StarHandler.GetComponent<ConstellationDrawer>().OnDusk();
+        StarRoot.GetComponent<ParticleSystem>().Play(true);
     }
 
     void TriggerDawn()
     {
-        StarHandler.GetComponent<ConstellationDrawer>().OnDawn();
+        StarRoot.GetComponent<ParticleSystem>().Stop(true);
     }
 }
