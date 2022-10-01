@@ -4,26 +4,25 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-[Serializable]
-public class Connection
-{
-    public int from, to;
-}
 
-public class ConstellationGizmo : MonoBehaviour
+public class Constellation : MonoBehaviour, IConstellation
 {
     private Graph<int, float> graph;
 
     public float NodeGizmoSize;
-    public Connection[] Connections;
+    public IConstellation.Connection[] Connections;
     public GameObject root;
+
+    private Dictionary<int, Star> starReference;
+    private HashSet<int> usedStars;
 
 
     // Start is called before the first frame update
     void Start()
     {
         graph = new Graph<int, float>();
-        Dictionary<int, Star> starReference = new Dictionary<int, Star>();
+        starReference = new Dictionary<int, Star>();
+        usedStars = new HashSet<int>();
         //collect child star objects
         var r = root ? root : gameObject;
         foreach (Transform child in r.transform)
@@ -36,8 +35,11 @@ public class ConstellationGizmo : MonoBehaviour
             }
         }
 
-        foreach (Connection c in Connections)
+        foreach (IConstellation.Connection c in Connections)
         {
+            usedStars.Add(c.from);
+            usedStars.Add(c.to);
+
             INode fromNode = starReference[c.from];
             INode toNode = starReference[c.to];
             if (fromNode != null && toNode != null)
@@ -84,5 +86,31 @@ public class ConstellationGizmo : MonoBehaviour
     void Update()
     {
         
+    }
+
+    // Return true iff star is used in this constellation
+    public bool ContainsStar(int id)
+    {
+        return usedStars.Contains(id);
+    }
+
+    // Return all connections
+    public IConstellation.Connection[] GetConnections()
+    {
+        return Connections;
+    }
+
+    // Return true iff there is a connection between stars with ids `from` and `to`
+    // (or the other way round)
+    public bool HasConnection(int from, int to)
+    {
+        foreach (IConstellation.Connection c in Connections)
+        {
+            if ((c.from == from && c.to == to) || (c.to == from && c.from == to))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
