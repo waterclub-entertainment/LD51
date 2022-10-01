@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System;
 
 [Serializable]
@@ -15,6 +16,7 @@ public class ConstellationGizmo : MonoBehaviour
 
     public float NodeGizmoSize;
     public Connection[] Connections;
+    public GameObject root;
 
 
     // Start is called before the first frame update
@@ -23,7 +25,8 @@ public class ConstellationGizmo : MonoBehaviour
         graph = new Graph<int, float>();
         Dictionary<int, Star> starReference = new Dictionary<int, Star>();
         //collect child star objects
-        foreach (Transform child in transform)
+        var r = root ? root : gameObject;
+        foreach (Transform child in r.transform)
         {
             Star obj = child.gameObject.GetComponent<Star>();
             if (obj != null)
@@ -66,6 +69,9 @@ public class ConstellationGizmo : MonoBehaviour
         {
             Gizmos.color = node.getColor();
             Gizmos.DrawSphere(node.getPosition(), NodeGizmoSize);
+
+            Handles.color = Color.black;
+            Handles.Label(node.getPosition() + new Vector3(NodeGizmoSize, 0, NodeGizmoSize), node.getValue().ToString());
         }
         foreach (var edge in graph.Edges)
         {
