@@ -6,6 +6,9 @@ public class TimeHandler : MonoBehaviour
 {
     public GameObject ConstellationDrawer;
     public GameObject Stars;
+    public Material glasMaterial;
+    [ColorUsageAttribute(false, true)]
+    public Color glasEmissoionColor;
 
     private ConstellationDrawer _ConstellationDrawer;
     private Animator ConstellationAnimator;
@@ -22,7 +25,7 @@ public class TimeHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        glasMaterial.SetColor("_EmissionColor", glasEmissoionColor);
     }
 
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +18,8 @@ public class ConstellationDrawer : MonoBehaviour {
     public GameObject linePrefab;
     public ConstellationGroup[] constellations;
     public float clickTime = 0.25f;
-    
+
+    private HashSet<int> completedConstellations;
     private Constellation constellation;
     private Constellation referenceConstellation = null;
     private Star lastStar = null;
@@ -31,6 +33,7 @@ public class ConstellationDrawer : MonoBehaviour {
         constellation = GetComponent<Constellation>();
         starPlane = new Plane(Vector3.up, transform.position);
         lineRenderer = GetComponent<LineRenderer>();
+        completedConstellations = new HashSet<int>();
     }
 
     void Update() {
@@ -82,6 +85,7 @@ public class ConstellationDrawer : MonoBehaviour {
     
     private void HandleConstellationCompletion()
     {
+        completedConstellations.Add(nextConstellation - 1);
         if (constellations[nextConstellation - 1].statue != null)
             constellations[nextConstellation - 1].statue.SetActive(true);
     }
@@ -141,12 +145,20 @@ public class ConstellationDrawer : MonoBehaviour {
     }
     
     public void LoadNextConstellation() {
-        if (nextConstellation >= constellations.Length) {
+        if (completedConstellations.Count == 12)
+        {
             // TODO: Win or sth
-            //Debug.Log("WIN");
-            //SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
+            Debug.Log("WIN");
+            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
+        }
+
+        if (nextConstellation >= constellations.Length) {
             nextConstellation = 0;
         }
+
+        while (completedConstellations.Contains(nextConstellation))
+            nextConstellation++; //skip all completed
+
         LoadConstellation(nextConstellation);
         GetComponent<Animator>().ResetTrigger("FadeOut");
         GetComponent<Animator>().SetTrigger("FadeIn");
