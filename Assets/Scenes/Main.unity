@@ -395,6 +395,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963719625916598953, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: zoomPathUnits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1768,7 +1772,7 @@ PrefabInstance:
     - target: {fileID: 2554258531414452233, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 689988476}
+      objectReference: {fileID: 0}
     - target: {fileID: 2554258531414452233, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Zoom
@@ -2184,7 +2188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
-  m_LocalRotation: {x: 0.36757678, y: -0, z: -0, w: 0.9299932}
+  m_LocalRotation: {x: 0.36755648, y: 0, z: 0, w: 0.9300012}
   m_LocalPosition: {x: 0, y: -0.5, z: -9.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2199,7 +2203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef1714f4213bf653693c892665c8f864, type: 3}
   m_Name: 
@@ -2215,7 +2219,7 @@ Animator:
   m_GameObject: {fileID: 961739749}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dde2d083a2f1b4921b711363f6c60545, type: 2}
+  m_Controller: {fileID: 9100000, guid: 52ffa65402817a54da7fc29292a49b20, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2995,12 +2999,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2069177924535922373, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d4a7b62c80d82e81292cb981b5f14c99, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
       value: Aries
       objectReference: {fileID: 0}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963719625916598953, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: zoomPathUnits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
