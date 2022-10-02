@@ -88,7 +88,15 @@ public class ConstellationDrawer : MonoBehaviour {
     {
         completedConstellations.Add(nextConstellation - 1);
         if (constellations[nextConstellation - 1].statue != null)
-            constellations[nextConstellation - 1].statue.SetActive(true);
+        {
+            foreach (Transform child in constellations[nextConstellation - 1].statue.transform)
+            {
+                if (child.gameObject.name != "Plane") //not pretty
+                    child.gameObject.SetActive(true);
+                else
+                    child.gameObject.SetActive(false);
+            }
+        }
     }
 
     private Vector3 MousePosition() {
