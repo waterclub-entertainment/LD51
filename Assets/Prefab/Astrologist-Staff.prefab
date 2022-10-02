@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2926167768999024266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841137326407270922}
+  m_Layer: 0
+  m_Name: Astrologist-Staff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841137326407270922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926167768999024266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6942059921692924219}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7484313848498290384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1841137326407270922}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.3854985
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.295909
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.7353325
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6898936
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38969162
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.40069512
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.46003345
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 9.731
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 67.626
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 73.918
+      objectReference: {fileID: 0}
+    - target: {fileID: -7601226680800833775, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf0f62cbfd3450540966957e55f15ebc, type: 2}
+    - target: {fileID: -2571118854743697038, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf0f62cbfd3450540966957e55f15ebc, type: 2}
+    - target: {fileID: -1439730007547781893, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6574962878803d49b8ffca44682995b, type: 2}
+    - target: {fileID: 919132149155446097, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_Name
+      value: Astrologist-staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6574962878803d49b8ffca44682995b, type: 2}
+    - target: {fileID: 7202271454713460447, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae0f6930953e3bd4cbf17e6edc0c4a07, type: 2}
+    - target: {fileID: 8521902485874960664, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6574962878803d49b8ffca44682995b, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+--- !u!4 &6942059921692924219 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8bd33c3374b8ac4b957bd9c69300650, type: 3}
+  m_PrefabInstance: {fileID: 7484313848498290384}
+  m_PrefabAsset: {fileID: 0}
