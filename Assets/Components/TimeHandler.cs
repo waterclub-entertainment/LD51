@@ -5,17 +5,18 @@ using UnityEngine;
 public class TimeHandler : MonoBehaviour
 {
     public GameObject ConstellationDrawer;
+    public GameObject Stars;
 
     private ConstellationDrawer _ConstellationDrawer;
     private Animator ConstellationAnimator;
-    private GameObject StarRoot;
+    private TestStarHandler StarParticles;
 
     // Start is called before the first frame update
     void Start()
     {
         _ConstellationDrawer = ConstellationDrawer.GetComponent<ConstellationDrawer>();
         ConstellationAnimator = ConstellationDrawer.GetComponent<Animator>();
-        StarRoot = _ConstellationDrawer.getRoot();
+        StarParticles = Stars.GetComponent<TestStarHandler>();
     }
 
     // Update is called once per frame
@@ -27,13 +28,13 @@ public class TimeHandler : MonoBehaviour
 
     void TriggerDusk()
     {
-        StarRoot.GetComponent<ParticleSystem>().Play(true);
+        StarParticles.start();
         _ConstellationDrawer.LoadNextConstellation();
     }
 
     void TriggerDawn()
     {
-        StarRoot.GetComponent<ParticleSystem>().Stop(true);
+        StarParticles.stop();
         ConstellationAnimator.ResetTrigger("FadeIn");
         ConstellationAnimator.SetTrigger("FadeOut");
     }
