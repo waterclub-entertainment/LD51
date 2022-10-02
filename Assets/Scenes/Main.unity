@@ -380,6 +380,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963719625916598953, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: zoomPathUnits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1743,7 +1747,7 @@ PrefabInstance:
     - target: {fileID: 2554258531414452233, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 689988476}
+      objectReference: {fileID: 0}
     - target: {fileID: 2554258531414452233, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Zoom
@@ -1766,11 +1770,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
---- !u!4 &689988476 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4963877816329695063, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
-  m_PrefabInstance: {fileID: 689988475}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &695849239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2158,7 +2157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef1714f4213bf653693c892665c8f864, type: 3}
   m_Name: 
@@ -2767,6 +2766,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963719625916598953, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: zoomPathUnits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
