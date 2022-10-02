@@ -13,6 +13,7 @@ public class TimeHandler : MonoBehaviour
     private ConstellationDrawer _ConstellationDrawer;
     private Animator ConstellationAnimator;
     private TestStarHandler StarParticles;
+    private Animator camAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class TimeHandler : MonoBehaviour
         _ConstellationDrawer = ConstellationDrawer.GetComponent<ConstellationDrawer>();
         ConstellationAnimator = ConstellationDrawer.GetComponent<Animator>();
         StarParticles = Stars.GetComponent<TestStarHandler>();
+        camAnimator = GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,8 @@ public class TimeHandler : MonoBehaviour
     {
         StarParticles.start();
         _ConstellationDrawer.LoadNextConstellation();
+        camAnimator.ResetTrigger("PanOut");
+        camAnimator.SetTrigger("PanIn");
     }
 
     void TriggerDawn()
@@ -40,5 +44,7 @@ public class TimeHandler : MonoBehaviour
         StarParticles.stop();
         ConstellationAnimator.ResetTrigger("FadeIn");
         ConstellationAnimator.SetTrigger("FadeOut");
+        camAnimator.ResetTrigger("PanIn");
+        camAnimator.SetTrigger("PanOut");
     }
 }
