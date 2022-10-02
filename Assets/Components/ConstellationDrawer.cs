@@ -25,7 +25,7 @@ public class ConstellationDrawer : MonoBehaviour {
     private LineRenderer lineRenderer;
     private int nextConstellation = 0;
     private float mouseDownTime = 0;
-    public float lineMultiplier = 1;
+    public float lineMultiplier = 1; //varaible for animation to centralize animation for all children
     
     void Start() {
         constellation = GetComponent<Constellation>();
@@ -36,7 +36,7 @@ public class ConstellationDrawer : MonoBehaviour {
     public GameObject getRoot() { return constellation.root; }
 
     void Update() {
-        SetLineSize(0.1f * lineMultiplier);
+        SetLineSize(0.1f * lineMultiplier); //this line effectively serves to forward the animation data in the multiplier to the objects
         Vector3 mousePosition = MousePosition();
         if (Input.GetMouseButtonDown(0)) {
             mouseDownTime = Time.unscaledTime;
@@ -152,6 +152,7 @@ public class ConstellationDrawer : MonoBehaviour {
         LoadConstellation(nextConstellation);
         GetComponent<Animator>().SetTrigger("FadeIn");
         nextConstellation++;
+
     }
     
     private void UnloadConstellation()
@@ -167,6 +168,7 @@ public class ConstellationDrawer : MonoBehaviour {
         constellation.Clear();
         lastStar = null;
         lineRenderer.enabled = false;
+        Debug.Log("Unloaded Constellation");
     }
 
     private void LoadConstellation(int index) {
@@ -181,6 +183,7 @@ public class ConstellationDrawer : MonoBehaviour {
         foreach (Star star in referenceConstellation.usedStars) {
             star.gameObject.GetComponent<SphereCollider>().radius = 0.5f;
         }
+        Debug.Log("Loaded Constellation " + index.ToString());
     }
 
     //TODO maybe move iteration to Constellation.cs
