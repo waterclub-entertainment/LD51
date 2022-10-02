@@ -267,7 +267,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -277,8 +277,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.73333335
         value: 0.8
-        inSlope: -0.61016953
-        outSlope: -0.61016953
+        inSlope: -1.6271186
+        outSlope: -1.6271186
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -331,15 +331,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 8.95
         value: 0.4
-        inSlope: 0.5042016
-        outSlope: 0.5042016
+        inSlope: 0.8067226
+        outSlope: 0.8067226
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -725,7 +725,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -735,8 +735,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.73333335
         value: 0.8
-        inSlope: -0.61016953
-        outSlope: -0.61016953
+        inSlope: -1.6271186
+        outSlope: -1.6271186
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -789,15 +789,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 8.95
         value: 0.4
-        inSlope: 0.5042016
-        outSlope: 0.5042016
+        inSlope: 0.8067226
+        outSlope: 0.8067226
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -845,7 +845,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
+  - time: 0.5
     functionName: TriggerDusk
     data: 
     objectReferenceParameter: {fileID: 0}
