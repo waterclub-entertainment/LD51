@@ -1,5 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+[Serializable]
+public class ConstellationGroup
+{
+    public GameObject constellationPrefab;
+    public GameObject statue;
+}
 
 [RequireComponent(typeof(LineRenderer))]
 [RequireComponent(typeof(Constellation))]
@@ -7,7 +15,7 @@ public class ConstellationDrawer : MonoBehaviour {
 
     public float starRadius = 1f;
     public GameObject linePrefab;
-    public GameObject[] constellations;
+    public ConstellationGroup[] constellations;
     public float clickTime = 0.25f;
     
     private Constellation constellation;
@@ -38,7 +46,7 @@ public class ConstellationDrawer : MonoBehaviour {
             if (lineAtMouse != null) {
                 constellation.RemoveConnection(lineAtMouse);
                 if (constellation.Matches(referenceConstellation)) {
-                    LoadNextConstellation();
+                    HandleConstellationCompletion();
                 }
             }
         }
@@ -56,7 +64,7 @@ public class ConstellationDrawer : MonoBehaviour {
                         
                         if (constellation.AddConnection(connection)) {
                             if (constellation.Matches(referenceConstellation)) {
-                                LoadNextConstellation();
+                                HandleConstellationCompletion();
                                 return;
                             }
                         }
@@ -74,6 +82,12 @@ public class ConstellationDrawer : MonoBehaviour {
         }
     }
     
+    private void HandleConstellationCompletion()
+    {
+        if (constellations[nextConstellation - 1].statue != null)
+            constellations[nextConstellation - 1].statue.SetActive(true);
+    }
+
     private Vector3 MousePosition() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         float d;
@@ -158,7 +172,7 @@ public class ConstellationDrawer : MonoBehaviour {
     private void LoadConstellation(int index) {
         UnloadConstellation();
 
-        GameObject reference = GameObject.Instantiate(constellations[index], transform);
+        GameObject reference = GameObject.Instantiate(constellations[index].constellationPrefab, transform);
         reference.tag = "constellation";
 
         referenceConstellation = reference.GetComponent<Constellation>();

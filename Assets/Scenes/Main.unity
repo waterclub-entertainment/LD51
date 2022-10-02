@@ -180,7 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e1f4640945d6d3d82ad9af8362e981c9, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (6)
+      value: Libra
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
@@ -241,10 +245,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a05f87277adf1ccaabd54bf5f6e95cff, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (3)
+      value: Cancer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+--- !u!1 &169639521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 2110451914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &267280518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,7 +315,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 77298d50da1e46c789602da6c3b7b978, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (2)
+      value: Taurus
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
@@ -359,7 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (11)
+      value: Aries
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
@@ -776,6 +797,58 @@ PrefabInstance:
     - target: {fileID: 3234727430248770776, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[0].statue
+      value: 
+      objectReference: {fileID: 1010064643}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[1].statue
+      value: 
+      objectReference: {fileID: 1560755120}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[2].statue
+      value: 
+      objectReference: {fileID: 1184795399}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[3].statue
+      value: 
+      objectReference: {fileID: 1029844131}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[4].statue
+      value: 
+      objectReference: {fileID: 1682778036}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[5].statue
+      value: 
+      objectReference: {fileID: 915569565}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[6].statue
+      value: 
+      objectReference: {fileID: 1487007411}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[7].statue
+      value: 
+      objectReference: {fileID: 1267560776}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[8].statue
+      value: 
+      objectReference: {fileID: 2134540781}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[9].statue
+      value: 
+      objectReference: {fileID: 2069747126}
+    - target: {fileID: 3234727430248770777, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: constellations.Array.data[11].statue
+      value: 
+      objectReference: {fileID: 169639521}
+    - target: {fileID: 3234727430248770780, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234727430248770780, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3234727430248770783, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1382,11 +1455,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7587418561621919205, guid: eca966b933352c47e8db7f54588524a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eca966b933352c47e8db7f54588524a5, type: 3}
---- !u!1 &512075420 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4568447926457884090, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
-  m_PrefabInstance: {fileID: 420472361}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &632288121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1444,7 +1512,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3d369f583ca08f8ceaa6bc6300e9f887, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (9)
+      value: Scorpio
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
@@ -1505,7 +1577,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 70232d273d9e03d60a08139aebacd7c2, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (1)
+      value: Gemini
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
@@ -1566,10 +1642,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 249ad15ed0de63ca087f0e097fb40fdc, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (4)
+      value: Capricorn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+--- !u!1 &726798915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3234727430248770776, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+  m_PrefabInstance: {fileID: 420472361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &803113471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,10 +1827,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9ee8f9517153f587f9193174d955d108, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (10)
+      value: Virgo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+--- !u!1 &915569565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 906579404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,6 +2056,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1010064643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 286358140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1029844131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 52373586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1049296661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2136,6 +2240,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1184795399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 689988475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1213356992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2360,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1267560776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 632288121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1320615457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2308,6 +2422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+--- !u!1 &1487007411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 30520722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1530903274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2365,10 +2484,24 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1efad76bf980ef5a2a677db09a550980, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (5)
+      value: Leo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+--- !u!1 &1560755120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 267280518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1682778036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 1530903274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1737667806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2426,10 +2559,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f5019cd6bd4a33490a0c95bdfda3521a, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (8)
+      value: Sagittarius
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+--- !u!1 &2069747126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 695849239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2110451914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2487,7 +2629,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ece37ef9db19ae481a73498474c65d3c, type: 2}
     - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Name
-      value: Pillar (7)
+      value: Pisces
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
@@ -2557,4 +2703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e8d192ccbf3d46910aadb2be03637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StarRoot: {fileID: 512075420}
+  ConstellationDrawer: {fileID: 726798915}
+--- !u!1 &2134540781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+  m_PrefabInstance: {fileID: 1737667806}
+  m_PrefabAsset: {fileID: 0}

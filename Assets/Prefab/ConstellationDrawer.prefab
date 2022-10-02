@@ -51,18 +51,30 @@ MonoBehaviour:
   starRadius: 1
   linePrefab: {fileID: 2543561570165699951, guid: de6aef4f9ef397141b52dfbb01c8d1d1, type: 3}
   constellations:
-  - {fileID: 5247665172992551100, guid: cf879dbb73e9ee948a1019caa96d9688, type: 3}
-  - {fileID: 6950075184410015596, guid: 9ba08443295451d4597ac5c36fe97daf, type: 3}
-  - {fileID: 1979701309612015644, guid: ddee1098b5a08b04694277c19660c029, type: 3}
-  - {fileID: 7418471587276021007, guid: af26df20acfb13b48960f16785db6efe, type: 3}
-  - {fileID: 1728011020049036138, guid: cdfe1a64ed1526e4eb7d1246031c38b6, type: 3}
-  - {fileID: 8833992916469700063, guid: d771977cc56c22d41922664460b4663b, type: 3}
-  - {fileID: 5209663677429936168, guid: 5fdf2459434101643bb38c989192f117, type: 3}
-  - {fileID: 2519043667046220372, guid: 2e755c6ac4d52db4fb4a4d8b0198dd96, type: 3}
-  - {fileID: 9121215569029277341, guid: 444009a2232157d4d83dc379cd2602d4, type: 3}
-  - {fileID: 6170482449406167515, guid: a74b6304f0a00874eb5f8d6771007d1e, type: 3}
-  - {fileID: 4528448775227559126, guid: 5f4136ca0662c004aba67d0bfa3e373a, type: 3}
-  - {fileID: 5173733374720710496, guid: 9646e824753f6644daf92459cdba796e, type: 3}
+  - constellationPrefab: {fileID: 6950075184410015596, guid: 9ba08443295451d4597ac5c36fe97daf, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 4528448775227559126, guid: 5f4136ca0662c004aba67d0bfa3e373a, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 1728011020049036138, guid: cdfe1a64ed1526e4eb7d1246031c38b6, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 1979701309612015644, guid: ddee1098b5a08b04694277c19660c029, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 8833992916469700063, guid: d771977cc56c22d41922664460b4663b, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 5173733374720710496, guid: 9646e824753f6644daf92459cdba796e, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 5209663677429936168, guid: 5fdf2459434101643bb38c989192f117, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 6170482449406167515, guid: a74b6304f0a00874eb5f8d6771007d1e, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 9121215569029277341, guid: 444009a2232157d4d83dc379cd2602d4, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 7418471587276021007, guid: af26df20acfb13b48960f16785db6efe, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 5247665172992551100, guid: cf879dbb73e9ee948a1019caa96d9688, type: 3}
+    statue: {fileID: 0}
+  - constellationPrefab: {fileID: 2519043667046220372, guid: 2e755c6ac4d52db4fb4a4d8b0198dd96, type: 3}
+    statue: {fileID: 0}
   clickTime: 0.25
   lineMultiplier: 1
 --- !u!120 &999839463132559922
