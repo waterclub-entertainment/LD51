@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 999839463132559927}
   - component: {fileID: 999839463132559922}
   - component: {fileID: 2448347224458561329}
+  - component: {fileID: 3045982880442779768}
   m_Layer: 0
   m_Name: ConstellationDrawer
   m_TagString: Untagged
@@ -62,6 +63,8 @@ MonoBehaviour:
   - {fileID: 6170482449406167515, guid: a74b6304f0a00874eb5f8d6771007d1e, type: 3}
   - {fileID: 4528448775227559126, guid: 5f4136ca0662c004aba67d0bfa3e373a, type: 3}
   - {fileID: 5173733374720710496, guid: 9646e824753f6644daf92459cdba796e, type: 3}
+  clickTime: 0.25
+  lineMultiplier: 1
 --- !u!120 &999839463132559922
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -177,6 +180,26 @@ MonoBehaviour:
   Connections: []
   root: {fileID: 2189392544456641364}
   linePrefab: {fileID: 2543561570165699951, guid: de6aef4f9ef397141b52dfbb01c8d1d1, type: 3}
+--- !u!95 &3045982880442779768
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999839463132559926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4db4ce92af7cf794194b840be2594daa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6626889702930275144
 PrefabInstance:
   m_ObjectHideFlags: 0

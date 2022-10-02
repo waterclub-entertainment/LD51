@@ -17,15 +17,18 @@ public class ConstellationDrawer : MonoBehaviour {
     private LineRenderer lineRenderer;
     private int nextConstellation = 0;
     private float mouseDownTime = 0;
+    public float lineMultiplier = 1;
     
     void Start() {
         constellation = GetComponent<Constellation>();
         starPlane = new Plane(Vector3.up, transform.position);
         lineRenderer = GetComponent<LineRenderer>();
-        LoadNextConstellation();
     }
-    
+
+    public GameObject getRoot() { return constellation.root; }
+
     void Update() {
+        SetLineSize(0.1f * lineMultiplier);
         Vector3 mousePosition = MousePosition();
         if (Input.GetMouseButtonDown(0)) {
             mouseDownTime = Time.unscaledTime;
@@ -125,34 +128,54 @@ public class ConstellationDrawer : MonoBehaviour {
         return null;
     }
     
-    private void LoadNextConstellation() {
+    public void LoadNextConstellation() {
         if (nextConstellation >= constellations.Length) {
             // TODO: Win or sth
-            Debug.Log("WIN");
-            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
-            return;
+            //Debug.Log("WIN");
+            //SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
+            nextConstellation = 0;
         }
         LoadConstellation(nextConstellation);
+        GetComponent<Animator>().SetTrigger("FadeIn");
         nextConstellation++;
     }
     
-    private void LoadConstellation(int index) {
+    private void UnloadConstellation()
+    {
         if (referenceConstellation != null)
         {
+            foreach (Star star in referenceConstellation.usedStars)
+            {
+                star.gameObject.GetComponent<SphereCollider>().radius = 0f;
+            }
             GameObject.Destroy(referenceConstellation.gameObject);
         }
         constellation.Clear();
         lastStar = null;
         lineRenderer.enabled = false;
+    }
+
+    private void LoadConstellation(int index) {
+        UnloadConstellation();
 
         GameObject reference = GameObject.Instantiate(constellations[index], transform);
-        
+        reference.tag = "constellation";
+
         referenceConstellation = reference.GetComponent<Constellation>();
         referenceConstellation.root = constellation.root;
-        referenceConstellation.SetLineWidth(0.1f);
 
         foreach (Star star in referenceConstellation.usedStars) {
             star.gameObject.GetComponent<SphereCollider>().radius = 0.5f;
         }
     }
+
+    //TODO maybe move iteration to Constellation.cs
+    public void SetLineSize(float val)
+    {
+        if (referenceConstellation == null)
+            return;
+        referenceConstellation.SetLineWidth(val);
+        lineRenderer.widthMultiplier = val * 2;
+    }
+
 }

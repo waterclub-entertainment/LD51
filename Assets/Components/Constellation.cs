@@ -77,6 +77,7 @@ public class Constellation : MonoBehaviour
 
     void OnDrawGizmos()
     {
+#if UNITY_EDITOR
         if (_starReference == null)
         {
             _starReference = new Dictionary<int, Star>();
@@ -90,7 +91,6 @@ public class Constellation : MonoBehaviour
                 }
             }
         }
-#if UNITY_EDITOR
         foreach (var node in _starReference.Values)
         {
              Gizmos.color = node.getColor();
