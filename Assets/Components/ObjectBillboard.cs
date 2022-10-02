@@ -10,10 +10,7 @@ public class ObjectBillboard : MonoBehaviour
         Transform camTrans = Camera.main.transform;
         float NormalMultiplier = (transform.position.y - camTrans.position.y) / camTrans.forward.y; //compute Intersection Multiplier
 
-
-        Vector3 camGroundIntersect = camTrans.position + NormalMultiplier * camTrans.forward;
-
-        Vector3 dir = camGroundIntersect - transform.position;
+        Vector3 dir = -transform.position;
         dir.y = 0;
         transform.forward = Vector3.Normalize(dir);
     }
