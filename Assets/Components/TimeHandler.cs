@@ -34,6 +34,7 @@ public class TimeHandler : MonoBehaviour
     void TriggerDawn()
     {
         StarRoot.GetComponent<ParticleSystem>().Stop(true);
+        ConstellationAnimator.ResetTrigger("FadeIn");
         ConstellationAnimator.SetTrigger("FadeOut");
     }
 }

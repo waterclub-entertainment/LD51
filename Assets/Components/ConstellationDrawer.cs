@@ -150,6 +150,7 @@ public class ConstellationDrawer : MonoBehaviour {
             nextConstellation = 0;
         }
         LoadConstellation(nextConstellation);
+        GetComponent<Animator>().ResetTrigger("FadeOut");
         GetComponent<Animator>().SetTrigger("FadeIn");
         nextConstellation++;
 
@@ -179,6 +180,7 @@ public class ConstellationDrawer : MonoBehaviour {
 
         referenceConstellation = reference.GetComponent<Constellation>();
         referenceConstellation.root = constellation.root;
+        SetLineSize(0.1f * lineMultiplier);
 
         foreach (Star star in referenceConstellation.usedStars) {
             star.gameObject.GetComponent<SphereCollider>().radius = 0.5f;
