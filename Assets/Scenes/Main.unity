@@ -2891,6 +2891,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ConstellationDrawer: {fileID: 726798915}
   Stars: {fileID: 646082540}
+  glasMaterial: {fileID: 2100000, guid: 1bb4a8f51d046064196ec5177d157f4b, type: 2}
+  glasEmissoionColor: {r: 0.11372549, g: 0.6431373, b: 0.15294118, a: 0}
 --- !u!1 &2134540781 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
