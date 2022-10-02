@@ -64,6 +64,7 @@ public class ConstellationDrawer : MonoBehaviour {
                         connection.to = starAtMouse.GetComponent<Star>().ID;
                         
                         if (constellation.AddConnection(connection)) {
+                            GetComponent<RandomSound>().PlayRandomSound();
                             if (constellation.Matches(referenceConstellation)) {
                                 HandleConstellationCompletion();
                                 return;
