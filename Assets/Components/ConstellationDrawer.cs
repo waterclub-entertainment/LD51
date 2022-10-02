@@ -153,12 +153,12 @@ public class ConstellationDrawer : MonoBehaviour {
             SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
         }
 
+        while (completedConstellations.Contains(nextConstellation))
+            nextConstellation++; //skip all completed
+
         if (nextConstellation >= constellations.Length) {
             nextConstellation = 0;
         }
-
-        while (completedConstellations.Contains(nextConstellation))
-            nextConstellation++; //skip all completed
 
         LoadConstellation(nextConstellation);
         GetComponent<Animator>().ResetTrigger("FadeOut");
