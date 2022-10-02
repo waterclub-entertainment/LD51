@@ -83,6 +83,8 @@ public class ZoomTrigger : MonoBehaviour {
 
         transform.position = groundPathPos + compVec * zoomPathUnits;
 
+        transform.forward = Vector3.Normalize(camTrans.position - transform.position);
+
         if (zoomPathUnits == 1.0f && !zoomAnimator.IsInTransition(0) && !zoomAnimator.GetCurrentAnimatorStateInfo(0).IsName("HoldZoomed"))
         {
             zoomAnimator.SetTrigger("ZoomOutSoon");
