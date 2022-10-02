@@ -37,7 +37,7 @@ public class ConstellationDrawer : MonoBehaviour {
     }
 
     void Update() {
-        SetLineSize(0.1f * lineMultiplier); //this line effectively serves to forward the animation data in the multiplier to the objects
+        SetLineSize(0.1f * lineMultiplier * ( 1.5f + (float)Math.Sin(Time.fixedTime)) / 2.5f); //this line effectively serves to forward the animation data in the multiplier to the objects
         Vector3 mousePosition = MousePosition();
         if (Input.GetMouseButtonDown(0)) {
             mouseDownTime = Time.unscaledTime;
@@ -150,6 +150,7 @@ public class ConstellationDrawer : MonoBehaviour {
             // TODO: Win or sth
             Debug.Log("WIN");
             SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
+            return;
         }
 
         if (nextConstellation >= constellations.Length) {
