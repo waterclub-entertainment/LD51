@@ -9,6 +9,8 @@ public class HudController : MonoBehaviour {
     public Sprite iconMinimize;
     public Sprite iconMute;
     public Sprite iconUnmute;
+    
+    private bool fullscreen = false;
 
     public void OnToggleMute(Image image) {
         float volume;
@@ -23,8 +25,9 @@ public class HudController : MonoBehaviour {
     }
     
     public void OnToggleFullscreen(Image image) {
-        Screen.fullScreen = !Screen.fullScreen;
-        if (Screen.fullScreen) {
+        fullscreen = !fullscreen;
+        Screen.fullScreen = fullscreen;
+        if (fullscreen) {
             image.sprite = iconMinimize;
         } else {
             image.sprite = iconMaximize;
