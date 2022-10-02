@@ -33,8 +33,6 @@ public class ConstellationDrawer : MonoBehaviour {
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    public GameObject getRoot() { return constellation.root; }
-
     void Update() {
         SetLineSize(0.1f * lineMultiplier); //this line effectively serves to forward the animation data in the multiplier to the objects
         Vector3 mousePosition = MousePosition();
