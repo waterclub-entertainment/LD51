@@ -131,8 +131,8 @@ public class Constellation : MonoBehaviour
         Vector3 to = starReference[c.to].transform.position;
         GameObject line = GameObject.Instantiate(linePrefab, transform);
         line.transform.position = from;
-        line.transform.LookAt(to, Vector3.up);
-        line.transform.localScale = new Vector3(1, 1, (from - to).magnitude);
+        line.transform.LookAt(from + Vector3.up, to - from);
+        line.transform.localScale = new Vector3(1, (from - to).magnitude / transform.lossyScale.x, 1);
         LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
         lineRenderer.SetPosition(0, from);
         lineRenderer.SetPosition(1, to);
@@ -152,18 +152,16 @@ public class Constellation : MonoBehaviour
         return false;
     }
     
-    //TODO slow as shit maybe theres a better way for movign the constellation
     public void UpdateConnectionPositions()
     {
         if (lines != null)
         {
-            foreach (Transform child in transform)
-            {
-                RemoveConnection(child.gameObject);
-            }
-            foreach (Constellation.Connection c in Connections)
-            {
-                AddConnection(c);
+            foreach (KeyValuePair<Connection, GameObject> pair in lines) {
+                Vector3 from = starReference[pair.Key.from].transform.position;
+                Vector3 to = starReference[pair.Key.to].transform.position;
+                LineRenderer lineRenderer = pair.Value.GetComponent<LineRenderer>();
+                lineRenderer.SetPosition(0, from);
+                lineRenderer.SetPosition(1, to);
             }
         }
     }

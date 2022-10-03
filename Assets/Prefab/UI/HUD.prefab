@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 2f8f5b3673aba9a9b8fabb9164ec974c, type: 2}
+  pauseMenu: {fileID: 0}
+  pauseMenuButton: {fileID: 1825654988922106908}
   iconMaximize: {fileID: 21300000, guid: e33b64cf053610782b00e667e78e498b, type: 3}
   iconMinimize: {fileID: 21300000, guid: 77e614b151b54e95fa5973d431a446ce, type: 3}
   iconMute: {fileID: 21300000, guid: 27fcc5e7e7f792a9880c33730357c040, type: 3}
@@ -155,9 +157,9 @@ RectTransform:
   m_Father: {fileID: 3713676638007184160}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 15, y: 472}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 15, y: -45}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2996338205436563266
@@ -242,13 +244,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 234610559956114008}
+        m_TargetAssemblyTypeName: HudController, Assembly-CSharp
+        m_MethodName: OnTogglePauseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -266,6 +268,7 @@ GameObject:
   - component: {fileID: 5581477532355055531}
   - component: {fileID: 5952269590036481424}
   - component: {fileID: 3773674774260665219}
+  - component: {fileID: 210156561816251706}
   m_Layer: 0
   m_Name: Fullscreen
   m_TagString: Untagged
@@ -374,19 +377,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5952269590036481424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 234610559956114008}
-        m_TargetAssemblyTypeName: HudController, Assembly-CSharp
-        m_MethodName: OnToggleFullscreen
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 5952269590036481424}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &210156561816251706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701081863224411932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 234610559956114008}
+          m_TargetAssemblyTypeName: HudController, Assembly-CSharp
+          m_MethodName: OnToggleFullscreen
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5952269590036481424}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5270768775388514154
 GameObject:
   m_ObjectHideFlags: 0

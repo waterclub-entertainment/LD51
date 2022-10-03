@@ -18,6 +18,8 @@ public class ConstellationDrawer : MonoBehaviour {
     public GameObject linePrefab;
     public ConstellationGroup[] constellations;
     public float clickTime = 0.25f;
+    public float lineMultiplier = 1; //varaible for animation to centralize animation for all children
+    public float referenceLineSize = 0.2f;
 
     private HashSet<int> completedConstellations;
     private Constellation constellation;
@@ -27,7 +29,6 @@ public class ConstellationDrawer : MonoBehaviour {
     private LineRenderer lineRenderer;
     private int currentConstellation = -1;
     private float mouseDownTime = 0;
-    public float lineMultiplier = 1; //varaible for animation to centralize animation for all children
     
     void Start() {
         constellation = GetComponent<Constellation>();
@@ -37,7 +38,7 @@ public class ConstellationDrawer : MonoBehaviour {
     }
 
     void Update() {
-        SetLineSize(0.1f * lineMultiplier * ( 1.5f + (float)Math.Sin(Time.fixedTime)) / 5f); //this line effectively serves to forward the animation data in the multiplier to the objects
+        SetLineSize(referenceLineSize * lineMultiplier * ( 1.5f + (float)Math.Sin(Time.fixedTime)) / 5f); //this line effectively serves to forward the animation data in the multiplier to the objects
         Vector3 mousePosition = MousePosition();
         if (Input.GetMouseButtonDown(0)) {
             mouseDownTime = Time.unscaledTime;
@@ -86,8 +87,13 @@ public class ConstellationDrawer : MonoBehaviour {
     
     private void HandleConstellationCompletion()
     {
-        // TODO: Trigger win if win
         completedConstellations.Add(currentConstellation);
+        if (completedConstellations.Count == 12)
+        {
+            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
+            return;
+        }
+        
         if (constellations[currentConstellation].statue != null)
         {
             foreach (Transform child in constellations[currentConstellation].statue.transform)
@@ -155,14 +161,6 @@ public class ConstellationDrawer : MonoBehaviour {
     }
     
     public void LoadNextConstellation() {
-        if (completedConstellations.Count == 12)
-        {
-            // TODO: Win or sth
-            Debug.Log("WIN");
-            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
-            return;
-        }
-        
         currentConstellation = (currentConstellation + 1) % constellations.Length;
 
         // skip all completed
@@ -199,7 +197,7 @@ public class ConstellationDrawer : MonoBehaviour {
 
         referenceConstellation = reference.GetComponent<Constellation>();
         referenceConstellation.root = constellation.root;
-        SetLineSize(0.1f * lineMultiplier);
+        SetLineSize(referenceLineSize * lineMultiplier);
 
         foreach (Star star in referenceConstellation.usedStars) {
             star.gameObject.GetComponent<SphereCollider>().radius = 0.5f;
@@ -213,7 +211,6 @@ public class ConstellationDrawer : MonoBehaviour {
         if (referenceConstellation == null)
             return;
         referenceConstellation.SetLineWidth(val);
-        lineRenderer.widthMultiplier = val * 2;
     }
 
 }

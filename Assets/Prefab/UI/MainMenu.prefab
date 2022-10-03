@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d128645a9b3d7c389bd6a2e246f344a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitButton: {fileID: 119451925931268812}
 --- !u!1 &1110443779532245074
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +814,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5783160308063155963}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: OnExit
+        m_MethodName: OnTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
