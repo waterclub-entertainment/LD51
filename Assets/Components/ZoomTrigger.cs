@@ -97,6 +97,7 @@ public class ZoomTrigger : MonoBehaviour {
             // TOOD: Only needed for book, very hacky
             GetComponent<Collider>().enabled = false;
             dayAnimator.speed = 0;
+            GetComponentInChildren<Canvas>().enabled = true;
         }
     }
 }

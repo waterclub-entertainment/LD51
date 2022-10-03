@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 882583484}
-  m_IndirectSpecularColor: {r: 0.45142937, g: 0.50077146, b: 0.571525, a: 1}
+  m_IndirectSpecularColor: {r: 0.45143002, g: 0.50077236, b: 0.5715264, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1699,6 +1699,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
   m_PrefabInstance: {fileID: 1055970016}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1083178974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3234727430248770776, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+  m_PrefabInstance: {fileID: 2090791961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1118358861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
@@ -1816,6 +1821,7 @@ MonoBehaviour:
   menuRef: {fileID: 477534154}
   fluffAnimatorSpeed: 1
   choirSound: {fileID: 8300000, guid: b6c0c1f70fac4074cb167624591de419, type: 3}
+  portalSound: {fileID: 8300000, guid: 7c302cd434604ca49be2c6c0187f9350, type: 3}
 --- !u!82 &1244847331
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2360,6 +2366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e8d192ccbf3d46910aadb2be03637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConstellationDrawer: {fileID: 1083178974}
+  Stars: {fileID: 1843259064}
+  glasMaterial: {fileID: 2100000, guid: 1bb4a8f51d046064196ec5177d157f4b, type: 2}
+  glasEmissoionColor: {r: 0.113, g: 0.643, b: 0.153, a: 0}
 --- !u!4 &1504743788
 Transform:
   m_ObjectHideFlags: 0

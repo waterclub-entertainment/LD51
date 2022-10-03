@@ -20,7 +20,8 @@ public class EquidistantFluffDistributor : MonoBehaviour
         foreach (GameObject go in lst)
         {
             Transform child = go.transform;
-            child.position = new Vector3((float)Math.Cos(2 * Math.PI * pos * rots), 0.0f, (float)Math.Sin(2 * Math.PI * pos * rots)) * distance + referenceCenter.transform.position + offset;
+            Vector3 p = new Vector3((float)Math.Cos(2 * Math.PI * pos * rots), 0.0f, (float)Math.Sin(2 * Math.PI * pos * rots)) * distance + referenceCenter.transform.position + offset;
+            child.position = p;
 
             child.up = Vector3.Normalize(referenceCenter.transform.position - child.position);
             pos += factor;
@@ -28,6 +29,8 @@ public class EquidistantFluffDistributor : MonoBehaviour
             //other setup
             if (child.gameObject.GetComponent<Animator>() != null)
                 child.gameObject.GetComponent<Animator>().enabled = false;
+            if (child.gameObject.GetComponent<IntroFluffMover>() != null)
+                child.gameObject.GetComponent<IntroFluffMover>().SetBasePos(p);
         }
     }
 }
