@@ -3,13 +3,17 @@ using UnityEngine;
 public class ZoomTrigger : MonoBehaviour {
 
     public float zoomPathUnits;
+    public bool billboarding = true;
+
     private Vector3 BasePos;
+    private Quaternion baseRotation;
 
     private Animator zoomAnimator;
 
     void Start()
     {
         BasePos = transform.position;
+        baseRotation = transform.rotation;
         zoomAnimator = GetComponent<Animator>();
     }
 
@@ -47,7 +51,7 @@ public class ZoomTrigger : MonoBehaviour {
         Gizmos.DrawSphere(camGroundIntersect, 0.2f);
         Gizmos.DrawSphere(groundPathPos + compVec * zoomPathUnits, 0.2f);
 
-
+        
     }
 
     void LateUpdate()
@@ -67,7 +71,10 @@ public class ZoomTrigger : MonoBehaviour {
 
         transform.position = groundPathPos + compVec * zoomPathUnits;
 
-        transform.forward = Vector3.Normalize(camTrans.position - transform.position);
-
+        if (billboarding) {
+            transform.forward = Vector3.Normalize(camTrans.position - transform.position);
+        } else {
+            transform.rotation = Quaternion.Lerp(baseRotation, camTrans.rotation * Quaternion.Euler(90, 0, 180), zoomPathUnits);
+        }
     }
 }
