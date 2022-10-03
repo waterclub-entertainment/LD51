@@ -900,7 +900,7 @@ Animator:
   m_GameObject: {fileID: 517579188}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6513c11abd273374b94cb863f630794f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8cd580920146a0508a2a3339e1fb94cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1250,11 +1250,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
   m_PrefabInstance: {fileID: 695849239}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &760309985 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3234727430248770776, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
-  m_PrefabInstance: {fileID: 1034939387}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &803113471
 GameObject:
@@ -2757,11 +2752,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2560314849645228430, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
   m_PrefabInstance: {fileID: 1530903274}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1543397084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4568447926457884090, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
-  m_PrefabInstance: {fileID: 1034939387}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1623865411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,7 +3210,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e8d192ccbf3d46910aadb2be03637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConstellationDrawer: {fileID: 760309985}
-  Stars: {fileID: 1543397084}
-  glasMaterial: {fileID: 2100000, guid: 1bb4a8f51d046064196ec5177d157f4b, type: 2}
-  glasEmissoionColor: {r: 0.11372549, g: 0.6431373, b: 0.15294118, a: 0}
