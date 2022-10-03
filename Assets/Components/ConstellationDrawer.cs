@@ -18,6 +18,7 @@ public class ConstellationDrawer : MonoBehaviour {
     public GameObject linePrefab;
     public ConstellationGroup[] constellations;
     public float clickTime = 0.25f;
+    public float lineMultiplier = 1; //varaible for animation to centralize animation for all children
 
     private HashSet<int> completedConstellations;
     private Constellation constellation;
@@ -27,7 +28,6 @@ public class ConstellationDrawer : MonoBehaviour {
     private LineRenderer lineRenderer;
     private int currentConstellation = -1;
     private float mouseDownTime = 0;
-    public float lineMultiplier = 1; //varaible for animation to centralize animation for all children
     
     void Start() {
         constellation = GetComponent<Constellation>();
@@ -213,7 +213,6 @@ public class ConstellationDrawer : MonoBehaviour {
         if (referenceConstellation == null)
             return;
         referenceConstellation.SetLineWidth(val);
-        lineRenderer.widthMultiplier = val * 2;
     }
 
 }
