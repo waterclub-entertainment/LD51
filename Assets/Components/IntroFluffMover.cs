@@ -56,5 +56,7 @@ public class IntroFluffMover : MonoBehaviour
         Vector3 compVec = (bToc * zoomPathUnits + MiddleUp) - groundPathPos;
 
         transform.position = groundPathPos + compVec * zoomPathUnits;
+
+        transform.forward = Vector3.Normalize(Camera.main.transform.position - transform.position);
     }
 }

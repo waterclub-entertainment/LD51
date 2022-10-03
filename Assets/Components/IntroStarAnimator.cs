@@ -16,7 +16,7 @@ public class IntroStarAnimator : MonoBehaviour
 
     private List<StarOffset> stars;
 
-    private Constellation constellation;
+    private Dictionary<int, Constellation> constellation;
     private float maxRange;
 
     // Start is called before the first frame update
@@ -73,18 +73,14 @@ public class IntroStarAnimator : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + new Vector3(0.0f, maxRange + spherePlaneOffset, 0.0f), maxRange);
     }
 
-    public void SetConstellation(Constellation _constellation)
+    public void SetConstellation(Dictionary<int, Constellation> _constellation)
     {
         //Set Constellation
         constellation = _constellation;
-        if (constellation != null)
-            constellation.gameObject.SetActive(false);
     }
 
     public void ShowConstellation()
     {
-        constellation.gameObject.SetActive(true);
-        constellation.UpdateConnectionPositions();
     }
 
     // Update is called once per frame
@@ -94,14 +90,17 @@ public class IntroStarAnimator : MonoBehaviour
             return;
         foreach (StarOffset star in stars)
         {
-            if (constellation.usedStars.Contains(star.star.GetComponent<Star>()))
+            foreach (Constellation _c in constellation.Values)
             {
-                star.star.transform.localPosition = new Vector3(star.star.transform.localPosition.x, star.offset * starOffsetAnim, star.star.transform.localPosition.z);
-                star.star.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
-            }
-            else
-            {
-                star.star.transform.localScale = Vector3.one;
+                if (_c.usedStars.Contains(star.star.GetComponent<Star>()))
+                {
+                    star.star.transform.localPosition = new Vector3(star.star.transform.localPosition.x, star.offset * starOffsetAnim, star.star.transform.localPosition.z);
+                    star.star.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
+                }
+                else
+                {
+                    star.star.transform.localScale = Vector3.one;
+                }
             }
         }
     }
