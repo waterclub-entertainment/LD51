@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Choreographer : MonoBehaviour
@@ -15,8 +16,9 @@ public class Choreographer : MonoBehaviour
     }
     public GameObject StarRoot;
     public ConstellationMap[] constellationMap;
-    public int[] test;
     public GameObject SymbolPlane;
+
+    public GameObject menuRef;
 
 
     public float fluffAnimatorSpeed = 1.0f;
@@ -33,6 +35,7 @@ public class Choreographer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Animator>().enabled = !menuRef.activeSelf;
     }
 
     private void UnloadConstellation(int index)
@@ -95,5 +98,10 @@ public class Choreographer : MonoBehaviour
         aniRef.enabled = true;
         Debug.Log("Setting Speed at " + fluffAnimatorSpeed.ToString());
         aniRef.SetFloat("animSpeed", fluffAnimatorSpeed);
+    }
+
+    void ToMainScene()
+    {
+        SceneManager.LoadScene("Scenes/Main");
     }
 }
