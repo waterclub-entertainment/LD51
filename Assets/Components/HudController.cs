@@ -55,6 +55,8 @@ public class HudController : MonoBehaviour {
     }
     
     void Update() {
+        if (pauseMenu == null)
+            return; //invalid
         if (Time.timeScale == 0 && !pauseMenu.activeInHierarchy) {
             // Main menu is open
             pauseMenuButton.SetActive(false);       

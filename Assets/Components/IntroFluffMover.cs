@@ -9,6 +9,7 @@ public class IntroFluffMover : MonoBehaviour
     public float curveHeight;
 
     public bool invert;
+    public bool offsetLocal;
 
     private Vector3 BasePos;
     private Vector3 GoalPos;
@@ -22,7 +23,9 @@ public class IntroFluffMover : MonoBehaviour
 
     public void SetBasePos(Vector3 b)
     {
-        BasePos = b + transform.localPosition;
+        BasePos = b;
+        if (offsetLocal)
+            BasePos += transform.localPosition;
     }
 
     void OnDrawGizmos()
