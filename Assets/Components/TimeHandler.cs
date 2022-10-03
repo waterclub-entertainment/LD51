@@ -21,7 +21,7 @@ public class TimeHandler : MonoBehaviour
         _ConstellationDrawer = ConstellationDrawer.GetComponent<ConstellationDrawer>();
         ConstellationAnimator = ConstellationDrawer.GetComponent<Animator>();
         StarParticles = Stars.GetComponent<TestStarHandler>();
-        camAnimator = GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<Animator>();
+        camAnimator = Camera.main.GetComponent<Animator>();
     }
 
     // Update is called once per frame
