@@ -121,8 +121,9 @@ MonoBehaviour:
   pauseMenuButton: {fileID: 1825654988922106908}
   iconMaximize: {fileID: 21300000, guid: e33b64cf053610782b00e667e78e498b, type: 3}
   iconMinimize: {fileID: 21300000, guid: 77e614b151b54e95fa5973d431a446ce, type: 3}
-  iconMute: {fileID: 21300000, guid: 27fcc5e7e7f792a9880c33730357c040, type: 3}
-  iconUnmute: {fileID: 21300000, guid: 7bace4689e666a7d8ab5e6fd167b7be8, type: 3}
+  iconMute: {fileID: 21300000, guid: c05d6b20477b8164d8a640e4e92305fe, type: 3}
+  iconUnmute: {fileID: 21300000, guid: 1cdaa31f13446a942ac5c65697801299, type: 3}
+  volume: 0
 --- !u!1 &1825654988922106908
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27fcc5e7e7f792a9880c33730357c040, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c05d6b20477b8164d8a640e4e92305fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
