@@ -37,8 +37,13 @@ public class Choreographer : MonoBehaviour
 
     private void UnloadConstellation(int index)
     {
-        GameObject.Destroy(referenceConstellation[index].gameObject);
+        Constellation c = referenceConstellation[index];
+        if (c == visibleConstellation)
+        {
+            visibleConstellation = null;
+        }
         referenceConstellation.Remove(index);
+        GameObject.Destroy(c.gameObject);
 
         Debug.Log("Unloaded Constellation");
     }
@@ -53,7 +58,7 @@ public class Choreographer : MonoBehaviour
         c.root = StarRoot;
         reference.SetActive(false);
 
-        referenceConstellation[index] = c;
+        referenceConstellation.Add(index, c);
 
         Debug.Log("Loaded Constellation " + index.ToString());
     }
@@ -79,10 +84,6 @@ public class Choreographer : MonoBehaviour
     }
     void UnsetStarConstellation(int constellation)
     {
-        if (referenceConstellation[constellation] == visibleConstellation)
-        {
-            visibleConstellation = null;
-        }
 
         UnloadConstellation(constellation);
         StarRoot.GetComponent<IntroStarAnimator>().SetConstellation(referenceConstellation);
@@ -92,6 +93,7 @@ public class Choreographer : MonoBehaviour
     {
         Animator aniRef = constellationMap[fluff].summoner.GetComponent<Animator>();
         aniRef.enabled = true;
-        aniRef.speed = fluffAnimatorSpeed;
+        Debug.Log("Setting Speed at " + fluffAnimatorSpeed.ToString());
+        aniRef.SetFloat("animSpeed", fluffAnimatorSpeed);
     }
 }
