@@ -11,6 +11,9 @@ public class ZoomTrigger : MonoBehaviour {
 
     private Animator zoomAnimator;
 
+    private bool isZooming = false;
+    private static ZoomTrigger zoomer = null;
+
     void Start()
     {
         BasePos = transform.position;
@@ -21,13 +24,17 @@ public class ZoomTrigger : MonoBehaviour {
 
     void OnMouseDown()
     {
-        zoomAnimator.SetTrigger("Zoom");
+        if (zoomer == null || !zoomer.isZooming || zoomer == this)
+        {
+            zoomAnimator.SetTrigger("Zoom");
+            zoomer = this;
+            isZooming = !isZooming;
+        }
     }
 
     void OnDrawGizmos()
     {
         Transform camTrans = Camera.main.transform;
-
 
         float NormalMultiplier = (BasePos.y - camTrans.position.y) / camTrans.forward.y; //compute Intersection Multiplier
         Vector3 camGroundIntersect = camTrans.position + NormalMultiplier * camTrans.forward;
@@ -54,6 +61,11 @@ public class ZoomTrigger : MonoBehaviour {
         Gizmos.DrawSphere(groundPathPos + compVec * zoomPathUnits, 0.2f);
 
         
+    }
+
+    void Update()
+    {
+        isZooming = zoomAnimator.GetCurrentAnimatorStateInfo(0).IsName("ZoomIn");
     }
 
     void LateUpdate()
