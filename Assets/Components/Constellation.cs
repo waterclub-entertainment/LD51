@@ -152,18 +152,16 @@ public class Constellation : MonoBehaviour
         return false;
     }
     
-    //TODO slow as shit maybe theres a better way for movign the constellation
     public void UpdateConnectionPositions()
     {
         if (lines != null)
         {
-            foreach (Transform child in transform)
-            {
-                RemoveConnection(child.gameObject);
-            }
-            foreach (Constellation.Connection c in Connections)
-            {
-                AddConnection(c);
+            foreach (KeyValuePair<Connection, GameObject> pair in lines) {
+                Vector3 from = starReference[pair.Key.from].transform.position;
+                Vector3 to = starReference[pair.Key.to].transform.position;
+                LineRenderer lineRenderer = pair.Value.GetComponent<LineRenderer>();
+                lineRenderer.SetPosition(0, from);
+                lineRenderer.SetPosition(1, to);
             }
         }
     }

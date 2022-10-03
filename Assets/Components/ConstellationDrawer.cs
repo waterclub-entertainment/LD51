@@ -86,8 +86,13 @@ public class ConstellationDrawer : MonoBehaviour {
     
     private void HandleConstellationCompletion()
     {
-        // TODO: Trigger win if win
         completedConstellations.Add(currentConstellation);
+        if (completedConstellations.Count == 12)
+        {
+            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
+            return;
+        }
+        
         if (constellations[currentConstellation].statue != null)
         {
             foreach (Transform child in constellations[currentConstellation].statue.transform)
@@ -155,14 +160,6 @@ public class ConstellationDrawer : MonoBehaviour {
     }
     
     public void LoadNextConstellation() {
-        if (completedConstellations.Count == 12)
-        {
-            // TODO: Win or sth
-            Debug.Log("WIN");
-            SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
-            return;
-        }
-        
         currentConstellation = (currentConstellation + 1) % constellations.Length;
 
         // skip all completed
