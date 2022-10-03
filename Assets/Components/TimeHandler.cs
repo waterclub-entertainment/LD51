@@ -1,48 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeHandler : MonoBehaviour
+public class OutlineScript : MonoBehaviour
 {
-    public GameObject ConstellationDrawer;
-    public GameObject Stars;
-    public Material glasMaterial;
-    [ColorUsageAttribute(false, true)]
-    public Color glasEmissoionColor;
+    [SerializeField] private Material outlineMaterial;
+    [SerializeField] private float outlineScaleFactor;
+    [SerializeField] private Color outlineColor;
+    private Renderer outlineRenderer;
 
-    private ConstellationDrawer _ConstellationDrawer;
-    private Animator ConstellationAnimator;
-    private TestStarHandler StarParticles;
-    private Animator camAnimator;
-
-    // Start is called before the first frame update
     void Start()
     {
-        _ConstellationDrawer = ConstellationDrawer.GetComponent<ConstellationDrawer>();
-        ConstellationAnimator = ConstellationDrawer.GetComponent<Animator>();
-        StarParticles = Stars.GetComponent<TestStarHandler>();
-        camAnimator = Camera.main.GetComponent<Animator>();
+        outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
+        outlineRenderer.enabled = true;
     }
-
-    // Update is called once per frame
-    void Update()
+    Renderer CreateOutline(Material outlineMat, float scaleFactor, Color color)
     {
-        glasMaterial.SetColor("_EmissionColor", glasEmissoionColor);
-    }
+        GameObject outlineObject = Instantiate(this.gameObject, transform.position, transform.rotation, transform);
+        Renderer rend = outlineObject.GetComponent<Renderer>();
 
+        rend.material = outlineMat;
+        rend.material.SetColor("_OutlineColor", color);
+        rend.material.SetFloat("_Scale", scaleFactor);
+        rend.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 
-    void TriggerDusk()
-    {
-        StarParticles.start();
-        _ConstellationDrawer.LoadNextConstellation();
-        camAnimator.ResetTrigger("PanOut");
-        camAnimator.SetTrigger("PanIn");
-    }
+        outlineObject.GetComponent<OutlineScript>().enabled = false;
+        outlineObject.GetComponent<Collider>().enabled = false;
 
-    void TriggerDawn()
-    {
-        StarParticles.stop();
-        ConstellationAnimator.ResetTrigger("FadeIn");
-        ConstellationAnimator.SetTrigger("FadeOut");
-        camAnimator.ResetTrigger("PanIn");
-        camAnimator.SetTrigger("PanOut");
+        rend.enabled = false;
+
+        return rend;
     }
 }
