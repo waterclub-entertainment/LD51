@@ -3,27 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StarOffset
-{
-    public float offset;
-    public GameObject star;
-}
-
 public class IntroStarAnimator : MonoBehaviour
 {
     public float spherePlaneOffset;
-    public float starOffsetAnim = 1.0f;
-
-    private List<StarOffset> stars;
-
     private Dictionary<int, Constellation> constellation;
     private float maxRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        stars = new List<StarOffset>();
-
         //Debug.Log("Computing Star Offsets");
         maxRange = 0;
         foreach (Transform child in transform)
@@ -50,8 +38,8 @@ public class IntroStarAnimator : MonoBehaviour
                 float offset = UnityEngine.Random.Range(maxRange - delta + spherePlaneOffset, spherePlaneOffset + maxRange + delta);
                 //Debug.Log("Computed Sphere Offset from Stars in Range: (" + (maxRange - delta + spherePlaneOffset).ToString() + ", " + (maxRange + delta + spherePlaneOffset).ToString() + ")");
 
-                child.localPosition = new Vector3(child.localPosition.x, offset, child.localPosition.z);
-                stars.Add(new StarOffset { offset = offset, star = child.gameObject });
+                child.gameObject.GetComponent<Star>().setOffset(offset);
+
             }
         }
     }
@@ -79,28 +67,16 @@ public class IntroStarAnimator : MonoBehaviour
         constellation = _constellation;
     }
 
-    public void ShowConstellation()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (constellation == null)
             return;
-        foreach (StarOffset star in stars)
+        foreach (Constellation _c in constellation.Values)
         {
-            foreach (Constellation _c in constellation.Values)
+            foreach (Star s in _c.usedStars)
             {
-                if (_c.usedStars.Contains(star.star.GetComponent<Star>()))
-                {
-                    star.star.transform.localPosition = new Vector3(star.star.transform.localPosition.x, star.offset * starOffsetAnim, star.star.transform.localPosition.z);
-                    star.star.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
-                }
-                else
-                {
-                    star.star.transform.localScale = Vector3.one;
-                }
+                s.StartSeq();
             }
         }
     }

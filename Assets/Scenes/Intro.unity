@@ -194,6 +194,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7065622150989282830, guid: cea35919b5c8c7d41b40021a92873823, type: 3}
   m_PrefabInstance: {fileID: 1628724556}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &210689884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 2097497693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &222137903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -336,6 +341,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257578361}
   m_CullTransparentMesh: 1
+--- !u!1 &321216552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 1798219528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &353827070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1017,16 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &812156656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 1826124789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &882035397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 1670232082}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &971647809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1129,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
   m_PrefabInstance: {fileID: 1055970016}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1118358861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 222137903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1244847327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,15 +1204,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StarRoot: {fileID: 1843259064}
   constellationMap:
-  - summoner: {fileID: 1055970018}
+  - summoner: {fileID: 1858593650}
     constellation: {fileID: 6950075184410015596, guid: 9ba08443295451d4597ac5c36fe97daf, type: 3}
     decal: {fileID: 2100000, guid: af2e5b9bbac2bf040bca5fb03c2528ed, type: 2}
-  - summoner: {fileID: 1599316914}
+  - summoner: {fileID: 1445827405}
     constellation: {fileID: 5247665172992551100, guid: cf879dbb73e9ee948a1019caa96d9688, type: 3}
     decal: {fileID: 2100000, guid: df1ef6166ef761444b9933e3a4174fd3, type: 2}
+  - summoner: {fileID: 1641563851}
+    constellation: {fileID: 1979701309612015644, guid: ddee1098b5a08b04694277c19660c029, type: 3}
+    decal: {fileID: 2100000, guid: 8767597725c6f0840b8dc1efd623566e, type: 2}
+  - summoner: {fileID: 812156656}
+    constellation: {fileID: 7418471587276021007, guid: af26df20acfb13b48960f16785db6efe, type: 3}
+    decal: {fileID: 2100000, guid: 746f7dc2ba9e85d4eb25568df56c53d3, type: 2}
+  - summoner: {fileID: 1246076100}
+    constellation: {fileID: 1728011020049036138, guid: cdfe1a64ed1526e4eb7d1246031c38b6, type: 3}
+    decal: {fileID: 2100000, guid: 4fc395f540245e14892125f3de1bd3a6, type: 2}
+  - summoner: {fileID: 321216552}
+    constellation: {fileID: 8833992916469700063, guid: d771977cc56c22d41922664460b4663b, type: 3}
+    decal: {fileID: 2100000, guid: 6eb871814b8dc3242a3fd0bc6685c594, type: 2}
+  - summoner: {fileID: 1055970018}
+    constellation: {fileID: 5209663677429936168, guid: 5fdf2459434101643bb38c989192f117, type: 3}
+    decal: {fileID: 2100000, guid: e9bd9ac45090d754093a0524175ed595, type: 2}
+  - summoner: {fileID: 1118358861}
+    constellation: {fileID: 2519043667046220372, guid: 2e755c6ac4d52db4fb4a4d8b0198dd96, type: 3}
+    decal: {fileID: 2100000, guid: e20c3526bcd97db4cbcbf47270c81c32, type: 2}
+  - summoner: {fileID: 1599316914}
+    constellation: {fileID: 9121215569029277341, guid: 444009a2232157d4d83dc379cd2602d4, type: 3}
+    decal: {fileID: 2100000, guid: 579b92550007bc84895501d50eb9189c, type: 2}
+  - summoner: {fileID: 2015725998}
+    constellation: {fileID: 6170482449406167515, guid: a74b6304f0a00874eb5f8d6771007d1e, type: 3}
+    decal: {fileID: 2100000, guid: 1a2538bd2864fb44c99df02756b16237, type: 2}
+  - summoner: {fileID: 882035397}
+    constellation: {fileID: 4528448775227559126, guid: 5f4136ca0662c004aba67d0bfa3e373a, type: 3}
+    decal: {fileID: 2100000, guid: 03bc04c3a23fb3145a7c79ab372c0963, type: 2}
+  - summoner: {fileID: 210689884}
+    constellation: {fileID: 5173733374720710496, guid: 9646e824753f6644daf92459cdba796e, type: 3}
+    decal: {fileID: 2100000, guid: 53a4f69ea0929294fb6249e461450f13, type: 2}
   test: 
   SymbolPlane: {fileID: 353827070}
   fluffAnimatorSpeed: 1
+--- !u!1 &1246076100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 1495605410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1367484732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,6 +1389,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6741812381566856236, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
   m_PrefabInstance: {fileID: 1382928446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1445827405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 470311142}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1495605410
 PrefabInstance:
@@ -1549,7 +1614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5014112348364382085, guid: cea35919b5c8c7d41b40021a92873823, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7065622150989282830, guid: cea35919b5c8c7d41b40021a92873823, type: 3}
       propertyPath: m_RootOrder
@@ -1597,6 +1662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cea35919b5c8c7d41b40021a92873823, type: 3}
+--- !u!1 &1641563851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 431212638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1654049494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,7 +2027,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spherePlaneOffset: 0
-  starOffsetAnim: 1
+--- !u!1 &1858593650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 674879875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2015725998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741812381566856227, guid: 6c91e3a551691ef4d836cff9f5a84621, type: 3}
+  m_PrefabInstance: {fileID: 1382928446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2090791961
 PrefabInstance:
   m_ObjectHideFlags: 0
