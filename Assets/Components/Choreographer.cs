@@ -22,6 +22,8 @@ public class Choreographer : MonoBehaviour
 
 
     public float fluffAnimatorSpeed = 1.0f;
+    
+    public AudioClip choirSound;
 
     private Dictionary<int, Constellation> referenceConstellation;
     private Constellation visibleConstellation;
@@ -103,5 +105,10 @@ public class Choreographer : MonoBehaviour
     void ToMainScene()
     {
         SceneManager.LoadScene("Scenes/Main");
+    }
+    
+    void Choir()
+    {
+        GetComponent<AudioSource>().PlayOneShot(choirSound);
     }
 }
