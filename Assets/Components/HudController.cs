@@ -11,6 +11,7 @@ public class HudController : MonoBehaviour {
     public Sprite iconMinimize;
     public Sprite iconMute;
     public Sprite iconUnmute;
+    public float volume;
     
     private bool fullscreen = false;
 
@@ -24,6 +25,11 @@ public class HudController : MonoBehaviour {
             mixer.SetFloat("MasterVolume", 0f);
             image.sprite = iconMute;
         }
+    }
+
+    public void OnChangeVolume(float Volume)
+    {
+        mixer.SetFloat("MasterVolume", Volume);
     }
     
     public void OnToggleFullscreen(Image image) {
