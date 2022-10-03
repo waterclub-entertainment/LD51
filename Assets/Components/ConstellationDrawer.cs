@@ -20,6 +20,7 @@ public class ConstellationDrawer : MonoBehaviour {
     public float clickTime = 0.25f;
     public float lineMultiplier = 1; //varaible for animation to centralize animation for all children
     public float referenceLineSize = 0.2f;
+    public AudioClip successSound;
 
     private HashSet<int> completedConstellations;
     private Constellation constellation;
@@ -49,6 +50,8 @@ public class ConstellationDrawer : MonoBehaviour {
                 constellation.RemoveConnection(lineAtMouse);
                 if (constellation.Matches(referenceConstellation)) {
                     HandleConstellationCompletion();
+                } else {
+                    GetComponent<RandomSound>().PlayRandomSound();
                 }
             }
         }
@@ -65,10 +68,11 @@ public class ConstellationDrawer : MonoBehaviour {
                         connection.to = starAtMouse.GetComponent<Star>().ID;
                         
                         if (constellation.AddConnection(connection)) {
-                            GetComponent<RandomSound>().PlayRandomSound();
                             if (constellation.Matches(referenceConstellation)) {
                                 HandleConstellationCompletion();
                                 return;
+                            } else {
+                                GetComponent<RandomSound>().PlayRandomSound();
                             }
                         }
                     }
@@ -87,6 +91,7 @@ public class ConstellationDrawer : MonoBehaviour {
     
     private void HandleConstellationCompletion()
     {
+        GetComponent<AudioSource>().PlayOneShot(successSound);
         completedConstellations.Add(currentConstellation);
         if (completedConstellations.Count == 12)
         {
