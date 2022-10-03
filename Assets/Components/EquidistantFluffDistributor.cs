@@ -11,13 +11,15 @@ public class EquidistantFluffDistributor : MonoBehaviour
     public Vector3 offset;
     public float rots = 1.0f;
     public float rotOffset = 0.0f;
+    public GameObject[] lst;
     // Start is called before the first frame update
     void Awake()
     {
         float factor = 1.0f / transform.childCount;
         float pos = rotOffset;
-        foreach (Transform child in transform)
+        foreach (GameObject go in lst)
         {
+            Transform child = go.transform;
             child.position = new Vector3((float)Math.Cos(2 * Math.PI * pos * rots), 0.0f, (float)Math.Sin(2 * Math.PI * pos * rots)) * distance + referenceCenter.transform.position + offset;
 
             child.up = Vector3.Normalize(referenceCenter.transform.position - child.position);

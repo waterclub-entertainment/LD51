@@ -1676,38 +1676,38 @@ MonoBehaviour:
     constellation: {fileID: 6950075184410015596, guid: 9ba08443295451d4597ac5c36fe97daf, type: 3}
     decal: {fileID: 2100000, guid: af2e5b9bbac2bf040bca5fb03c2528ed, type: 2}
   - summoner: {fileID: 1445827405}
-    constellation: {fileID: 5247665172992551100, guid: cf879dbb73e9ee948a1019caa96d9688, type: 3}
-    decal: {fileID: 2100000, guid: df1ef6166ef761444b9933e3a4174fd3, type: 2}
+    constellation: {fileID: 4528448775227559126, guid: 5f4136ca0662c004aba67d0bfa3e373a, type: 3}
+    decal: {fileID: 2100000, guid: 03bc04c3a23fb3145a7c79ab372c0963, type: 2}
   - summoner: {fileID: 1641563851}
-    constellation: {fileID: 1979701309612015644, guid: ddee1098b5a08b04694277c19660c029, type: 3}
-    decal: {fileID: 2100000, guid: 8767597725c6f0840b8dc1efd623566e, type: 2}
-  - summoner: {fileID: 812156656}
-    constellation: {fileID: 7418471587276021007, guid: af26df20acfb13b48960f16785db6efe, type: 3}
-    decal: {fileID: 2100000, guid: 746f7dc2ba9e85d4eb25568df56c53d3, type: 2}
-  - summoner: {fileID: 1246076100}
     constellation: {fileID: 1728011020049036138, guid: cdfe1a64ed1526e4eb7d1246031c38b6, type: 3}
     decal: {fileID: 2100000, guid: 4fc395f540245e14892125f3de1bd3a6, type: 2}
-  - summoner: {fileID: 321216552}
+  - summoner: {fileID: 812156656}
+    constellation: {fileID: 1979701309612015644, guid: ddee1098b5a08b04694277c19660c029, type: 3}
+    decal: {fileID: 2100000, guid: 8767597725c6f0840b8dc1efd623566e, type: 2}
+  - summoner: {fileID: 1246076100}
     constellation: {fileID: 8833992916469700063, guid: d771977cc56c22d41922664460b4663b, type: 3}
     decal: {fileID: 2100000, guid: 6eb871814b8dc3242a3fd0bc6685c594, type: 2}
+  - summoner: {fileID: 321216552}
+    constellation: {fileID: 5173733374720710496, guid: 9646e824753f6644daf92459cdba796e, type: 3}
+    decal: {fileID: 2100000, guid: 53a4f69ea0929294fb6249e461450f13, type: 2}
   - summoner: {fileID: 1055970018}
     constellation: {fileID: 5209663677429936168, guid: 5fdf2459434101643bb38c989192f117, type: 3}
     decal: {fileID: 2100000, guid: e9bd9ac45090d754093a0524175ed595, type: 2}
   - summoner: {fileID: 1118358861}
-    constellation: {fileID: 2519043667046220372, guid: 2e755c6ac4d52db4fb4a4d8b0198dd96, type: 3}
-    decal: {fileID: 2100000, guid: e20c3526bcd97db4cbcbf47270c81c32, type: 2}
+    constellation: {fileID: 6170482449406167515, guid: a74b6304f0a00874eb5f8d6771007d1e, type: 3}
+    decal: {fileID: 2100000, guid: 1a2538bd2864fb44c99df02756b16237, type: 2}
   - summoner: {fileID: 1599316914}
     constellation: {fileID: 9121215569029277341, guid: 444009a2232157d4d83dc379cd2602d4, type: 3}
     decal: {fileID: 2100000, guid: 579b92550007bc84895501d50eb9189c, type: 2}
   - summoner: {fileID: 2015725998}
-    constellation: {fileID: 6170482449406167515, guid: a74b6304f0a00874eb5f8d6771007d1e, type: 3}
-    decal: {fileID: 2100000, guid: 1a2538bd2864fb44c99df02756b16237, type: 2}
+    constellation: {fileID: 7418471587276021007, guid: af26df20acfb13b48960f16785db6efe, type: 3}
+    decal: {fileID: 2100000, guid: 746f7dc2ba9e85d4eb25568df56c53d3, type: 2}
   - summoner: {fileID: 882035397}
-    constellation: {fileID: 4528448775227559126, guid: 5f4136ca0662c004aba67d0bfa3e373a, type: 3}
-    decal: {fileID: 2100000, guid: 03bc04c3a23fb3145a7c79ab372c0963, type: 2}
+    constellation: {fileID: 5247665172992551100, guid: cf879dbb73e9ee948a1019caa96d9688, type: 3}
+    decal: {fileID: 2100000, guid: df1ef6166ef761444b9933e3a4174fd3, type: 2}
   - summoner: {fileID: 210689884}
-    constellation: {fileID: 5173733374720710496, guid: 9646e824753f6644daf92459cdba796e, type: 3}
-    decal: {fileID: 2100000, guid: 53a4f69ea0929294fb6249e461450f13, type: 2}
+    constellation: {fileID: 2519043667046220372, guid: 2e755c6ac4d52db4fb4a4d8b0198dd96, type: 3}
+    decal: {fileID: 2100000, guid: e20c3526bcd97db4cbcbf47270c81c32, type: 2}
   SymbolPlane: {fileID: 353827070}
   menuRef: {fileID: 477534154}
   fluffAnimatorSpeed: 1
@@ -2119,6 +2119,21 @@ MonoBehaviour:
   referenceCenter: {fileID: 971647809}
   distance: 6.98
   offset: {x: 0, y: 1.3, z: 0}
+  rots: 1
+  rotOffset: 0
+  lst:
+  - {fileID: 1055970018}
+  - {fileID: 1599316914}
+  - {fileID: 882035397}
+  - {fileID: 210689884}
+  - {fileID: 2015725998}
+  - {fileID: 1118358861}
+  - {fileID: 321216552}
+  - {fileID: 812156656}
+  - {fileID: 1445827405}
+  - {fileID: 1858593650}
+  - {fileID: 1641563851}
+  - {fileID: 1246076100}
 --- !u!1001 &1628724556
 PrefabInstance:
   m_ObjectHideFlags: 0
