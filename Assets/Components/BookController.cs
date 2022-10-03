@@ -1,10 +1,13 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class BookController : MonoBehaviour {
     
     public MeshRenderer image;
+    public MeshRenderer diagramm;
     public MeshRenderer nextImage;
+    public MeshRenderer nextDiagramm;
     public Material[] images;
     public Animator dayAnimator;
     
@@ -50,11 +53,56 @@ public class BookController : MonoBehaviour {
         }
     }
     
-    public void UpdateImages() {
+    public void UpdateImagesNext() {
         image.material = images[currentPage];
+        Material[] materials = new Material[] {
+            diagramm.materials[0],
+            diagramm.materials[1],
+            images[currentPage]
+        };
+        diagramm.materials = materials;
+        StartCoroutine(DelayedUpdateImagesNext());
+    }
+    
+    private IEnumerator DelayedUpdateImagesNext() {
+        yield return new WaitForSecondsRealtime(0f);
         if (currentPage != images.Length - 1) {
-            nextImage.material = images[currentPage + 1];
+            nextDiagramm.material = images[currentPage + 1];
+            Material[] materials = new Material[] {
+                nextImage.materials[0],
+                nextImage.materials[1],
+                images[currentPage + 1]
+            };
+            nextImage.materials = materials;
         }
+        yield return new WaitForSecondsRealtime(0f);
+        image.transform.parent.rotation = Quaternion.identity;
+    }
+
+    public void UpdateImagesPrev() {
+        if (currentPage != images.Length - 1) {
+            nextDiagramm.material = images[currentPage + 1];
+            Material[] materials = new Material[] {
+                nextImage.materials[0],
+                nextImage.materials[1],
+                images[currentPage + 1]
+            };
+            nextImage.materials = materials;
+        }
+        StartCoroutine(DelayedUpdateImagesPrev());
+    }
+    
+    private IEnumerator DelayedUpdateImagesPrev() {
+        yield return new WaitForSecondsRealtime(0f);
+        image.material = images[currentPage];
+        Material[] materials = new Material[] {
+            diagramm.materials[0],
+            diagramm.materials[1],
+            images[currentPage]
+        };
+        diagramm.materials = materials;
+        yield return new WaitForSecondsRealtime(0f);
+        image.transform.parent.rotation = Quaternion.identity;
     }
 
 }
