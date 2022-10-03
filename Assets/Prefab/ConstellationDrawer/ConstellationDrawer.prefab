@@ -79,6 +79,7 @@ MonoBehaviour:
     statue: {fileID: 0}
   clickTime: 0.25
   lineMultiplier: 1
+  referenceLineSize: 0.2
 --- !u!120 &999839463132559922
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -223,7 +224,7 @@ AudioSource:
   m_GameObject: {fileID: 999839463132559926}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -1839846577548246284, guid: 2f8f5b3673aba9a9b8fabb9164ec974c, type: 2}
+  OutputAudioMixerGroup: {fileID: 8019693484708939916, guid: 2f8f5b3673aba9a9b8fabb9164ec974c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.5
@@ -331,6 +332,17 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 5976f4855c6bcf2b5ace994070c617ce, type: 3}
     - {fileID: 8300000, guid: f50520378159bc246893a2fd212bd193, type: 3}
     - {fileID: 8300000, guid: 6cd9cf85490a1864b854be8c6a3f2bc1, type: 3}
+  - timestamp: 7.15
+    harmonics:
+    - {fileID: 8300000, guid: b5f4c10acced2dbe0a91789757af322f, type: 3}
+    - {fileID: 8300000, guid: 5976f4855c6bcf2b5ace994070c617ce, type: 3}
+    - {fileID: 8300000, guid: f50520378159bc246893a2fd212bd193, type: 3}
+    - {fileID: 8300000, guid: 6cd9cf85490a1864b854be8c6a3f2bc1, type: 3}
+  - timestamp: 14.3
+    harmonics:
+    - {fileID: 8300000, guid: df51700bf899e5dcd97d15c80b46c416, type: 3}
+    - {fileID: 8300000, guid: 5976f4855c6bcf2b5ace994070c617ce, type: 3}
+    - {fileID: 8300000, guid: f50520378159bc246893a2fd212bd193, type: 3}
 --- !u!1001 &6626889702930275144
 PrefabInstance:
   m_ObjectHideFlags: 0
