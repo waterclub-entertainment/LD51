@@ -103,6 +103,8 @@ public class ConstellationDrawer : MonoBehaviour {
         {
             foreach (Transform child in constellations[currentConstellation].statue.transform)
             {
+                if (child.gameObject.GetComponent<Animator>() != null)
+                    child.gameObject.GetComponent<Animator>().enabled = true;
                 if (child.gameObject.name != "Plane") //not pretty
                     child.gameObject.SetActive(true);
                 else

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6320782257670439062}
   - component: {fileID: 2963719625916598953}
   - component: {fileID: 4304454780987483276}
+  - component: {fileID: 1369857640348181122}
   m_Layer: 8
   m_Name: Fluffy
   m_TagString: Untagged
@@ -119,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomPathUnits: 0
+  billboarding: 1
+  dayAnimator: {fileID: 0}
 --- !u!135 &4304454780987483276
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -132,6 +135,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.50000006
   m_Center: {x: -0.00000023841858, y: -0.3, z: -0.00000023841858}
+--- !u!114 &1369857640348181122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242937052425247885}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda6bdf16b31f7345a66fbb4673324f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomPathUnits: 0
+  GoalTarget: {fileID: 0}
+  curveHeight: 2
+  invert: 1
 --- !u!1 &2560314849645228430
 GameObject:
   m_ObjectHideFlags: 0
