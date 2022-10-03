@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class BookController : MonoBehaviour {
@@ -10,6 +11,7 @@ public class BookController : MonoBehaviour {
     public MeshRenderer nextDiagramm;
     public Material[] images;
     public Animator dayAnimator;
+    public Image closeButton;
     
     private int currentPage = 0;
     
@@ -49,6 +51,7 @@ public class BookController : MonoBehaviour {
                 transform.parent.GetComponent<Collider>().enabled = true;
                 transform.parent.GetComponent<Animator>().SetTrigger("Zoom");
                 dayAnimator.speed = 1f;
+                GetComponentInChildren<Canvas>().enabled = false;
             }
         }
     }
