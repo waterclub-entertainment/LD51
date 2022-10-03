@@ -23,6 +23,7 @@ public class IntroFluffMover : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        Start();
         Vector3 MiddleUp = (GoalPos - BasePos) * 0.5f + BasePos;
         MiddleUp.y += curveHeight;
 
