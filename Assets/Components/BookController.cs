@@ -48,9 +48,9 @@ public class BookController : MonoBehaviour {
     }
     
     public void UpdateImages() {
-        image.materials[0] = images[currentPage];
+        image.material = images[currentPage];
         if (currentPage != images.Length - 1) {
-            nextImage.materials[0] = images[currentPage + 1];
+            nextImage.material = images[currentPage + 1];
         }
     }
 
