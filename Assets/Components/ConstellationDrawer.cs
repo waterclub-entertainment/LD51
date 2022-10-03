@@ -25,7 +25,7 @@ public class ConstellationDrawer : MonoBehaviour {
     private Star lastStar = null;
     private Plane starPlane;
     private LineRenderer lineRenderer;
-    private int nextConstellation = 0;
+    private int currentConstellation = -1;
     private float mouseDownTime = 0;
     public float lineMultiplier = 1; //varaible for animation to centralize animation for all children
     
@@ -86,10 +86,11 @@ public class ConstellationDrawer : MonoBehaviour {
     
     private void HandleConstellationCompletion()
     {
-        completedConstellations.Add(nextConstellation - 1);
-        if (constellations[nextConstellation - 1].statue != null)
+        // TODO: Trigger win if win
+        completedConstellations.Add(currentConstellation);
+        if (constellations[currentConstellation].statue != null)
         {
-            foreach (Transform child in constellations[nextConstellation - 1].statue.transform)
+            foreach (Transform child in constellations[currentConstellation].statue.transform)
             {
                 if (child.gameObject.name != "Plane") //not pretty
                     child.gameObject.SetActive(true);
@@ -161,18 +162,16 @@ public class ConstellationDrawer : MonoBehaviour {
             SceneManager.LoadScene(sceneName:"Scenes/Win Scene");
             return;
         }
+        
+        currentConstellation = (currentConstellation + 1) % constellations.Length;
 
-        while (completedConstellations.Contains(nextConstellation))
-            nextConstellation++; //skip all completed
+        // skip all completed
+        while (completedConstellations.Contains(currentConstellation))
+            currentConstellation = (currentConstellation + 1) % constellations.Length;
 
-        if (nextConstellation >= constellations.Length) {
-            nextConstellation = 0;
-        }
-
-        LoadConstellation(nextConstellation);
+        LoadConstellation(currentConstellation);
         GetComponent<Animator>().ResetTrigger("FadeOut");
         GetComponent<Animator>().SetTrigger("FadeIn");
-        nextConstellation++;
 
     }
     

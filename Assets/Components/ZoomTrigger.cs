@@ -15,23 +15,7 @@ public class ZoomTrigger : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (zoomPathUnits <= 0.2f)
-        {
-            //start zooming in
-            Debug.Log("Starting Zoom");
-            zoomAnimator.ResetTrigger("ZoomOut");
-            zoomAnimator.ResetTrigger("ZoomOutSoon");
-            zoomAnimator.SetTrigger("ZoomIn");
-        }
-        else if (zoomPathUnits >= 0.8f)
-        {
-            //start zooming out
-            Debug.Log("Ending Zoom");
-            zoomAnimator.ResetTrigger("ZoomIn");
-            zoomAnimator.ResetTrigger("ZoomOutSoon");
-            zoomAnimator.SetTrigger("ZoomOut");
-        }
-
+        zoomAnimator.SetTrigger("Zoom");
     }
 
     void OnDrawGizmos()
@@ -66,7 +50,7 @@ public class ZoomTrigger : MonoBehaviour {
 
     }
 
-    void Update()
+    void LateUpdate()
     {
         Transform camTrans = Camera.main.transform;
         float NormalMultiplier = (BasePos.y - camTrans.position.y) / camTrans.forward.y; //compute Intersection Multiplier
@@ -85,9 +69,5 @@ public class ZoomTrigger : MonoBehaviour {
 
         transform.forward = Vector3.Normalize(camTrans.position - transform.position);
 
-        if (zoomPathUnits == 1.0f && !zoomAnimator.IsInTransition(0) && !zoomAnimator.GetCurrentAnimatorStateInfo(0).IsName("HoldZoomed"))
-        {
-            zoomAnimator.SetTrigger("ZoomOutSoon");
-        }
     }
 }
