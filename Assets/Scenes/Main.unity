@@ -796,6 +796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astrologist-Staff
       objectReference: {fileID: 0}
+    - target: {fileID: 4290825214590691234, guid: ca1a55630d1b13840a361534d72633e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ecdf6ba5f0e81e4991458c6f70b4def, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1a55630d1b13840a361534d72633e2, type: 3}
 --- !u!1001 &494370000
@@ -2361,6 +2365,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 242937052425247885, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2069177924535922373, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2373,6 +2381,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2863024823952288327, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b09e2d49b7e7a042be523f125feb3b4, type: 2}
     - target: {fileID: 2963719625916598953, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
       propertyPath: zoomPathUnits
       value: 0
@@ -2381,6 +2393,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: af2e5b9bbac2bf040bca5fb03c2528ed, type: 2}
+    - target: {fileID: 5226835853193617865, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1548fb757093a0f918f6717172a9d163, type: 3}
 --- !u!4 &1320615458 stripped
