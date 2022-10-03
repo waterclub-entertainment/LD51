@@ -177,11 +177,12 @@ public class ConstellationDrawer : MonoBehaviour {
     {
         if (referenceConstellation != null)
         {
-            foreach (Star star in referenceConstellation.usedStars)
-            {
-                star.gameObject.GetComponent<SphereCollider>().radius = 0f;
-            }
             GameObject.Destroy(referenceConstellation.gameObject);
+        }
+        foreach (Transform star in constellation.root.transform)
+        {
+            star.GetComponent<SphereCollider>().radius = 0f;
+            star.localScale = Vector3.one * 0.3f;
         }
         constellation.Clear();
         lastStar = null;
@@ -201,6 +202,7 @@ public class ConstellationDrawer : MonoBehaviour {
 
         foreach (Star star in referenceConstellation.usedStars) {
             star.gameObject.GetComponent<SphereCollider>().radius = 0.5f;
+            star.transform.localScale = Vector3.one;
         }
         Debug.Log("Loaded Constellation " + index.ToString());
     }

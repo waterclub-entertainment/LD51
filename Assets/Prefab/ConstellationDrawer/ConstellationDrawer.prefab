@@ -79,7 +79,7 @@ MonoBehaviour:
     statue: {fileID: 0}
   clickTime: 0.25
   lineMultiplier: 1
-  referenceLineSize: 0.1
+  referenceLineSize: 0
 --- !u!120 &999839463132559922
 LineRenderer:
   m_ObjectHideFlags: 0
