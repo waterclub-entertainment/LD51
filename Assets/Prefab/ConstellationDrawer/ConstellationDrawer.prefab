@@ -80,6 +80,7 @@ MonoBehaviour:
   clickTime: 0.25
   lineMultiplier: 1
   referenceLineSize: 0
+  successSound: {fileID: 8300000, guid: 5ecb245451f7e4d9ca897b450bb14398, type: 3}
 --- !u!120 &999839463132559922
 LineRenderer:
   m_ObjectHideFlags: 0

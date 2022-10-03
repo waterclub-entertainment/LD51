@@ -4,6 +4,7 @@ public class ZoomTrigger : MonoBehaviour {
 
     public float zoomPathUnits;
     public bool billboarding = true;
+    public Animator dayAnimator;
 
     private Vector3 BasePos;
     private Quaternion baseRotation;
@@ -15,6 +16,7 @@ public class ZoomTrigger : MonoBehaviour {
         BasePos = transform.position;
         baseRotation = transform.rotation;
         zoomAnimator = GetComponent<Animator>();
+        zoomAnimator.SetBool("Billboarding", billboarding);
     }
 
     void OnMouseDown()
@@ -75,10 +77,14 @@ public class ZoomTrigger : MonoBehaviour {
             transform.forward = Vector3.Normalize(camTrans.position - transform.position);
         } else {
             transform.rotation = Quaternion.Lerp(baseRotation, camTrans.rotation * Quaternion.Euler(90, 0, 180), zoomPathUnits);
+        }
+    }
+    
+    public void MovementDone() {
+        if (!billboarding) {
             // TOOD: Only needed for book, very hacky
-            if (zoomPathUnits >= 0.5f) {
-                GetComponent<Collider>().enabled = false;
-            }
+            GetComponent<Collider>().enabled = false;
+            dayAnimator.speed = 0;
         }
     }
 }

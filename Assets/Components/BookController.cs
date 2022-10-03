@@ -6,6 +6,7 @@ public class BookController : MonoBehaviour {
     public MeshRenderer image;
     public MeshRenderer nextImage;
     public Material[] images;
+    public Animator dayAnimator;
     
     private int currentPage = 0;
     
@@ -26,7 +27,8 @@ public class BookController : MonoBehaviour {
     }
     
     public void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+        bool isPickedUp = !transform.parent.GetComponent<Collider>().enabled;
+        if (isPickedUp && Input.GetMouseButtonDown(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             bool didHit = false;
@@ -43,6 +45,7 @@ public class BookController : MonoBehaviour {
             if (!didHit) {
                 transform.parent.GetComponent<Collider>().enabled = true;
                 transform.parent.GetComponent<Animator>().SetTrigger("Zoom");
+                dayAnimator.speed = 1f;
             }
         }
     }
