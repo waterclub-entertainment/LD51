@@ -1816,6 +1816,7 @@ MonoBehaviour:
   menuRef: {fileID: 477534154}
   fluffAnimatorSpeed: 1
   choirSound: {fileID: 8300000, guid: b6c0c1f70fac4074cb167624591de419, type: 3}
+  portalSound: {fileID: 8300000, guid: 7c302cd434604ca49be2c6c0187f9350, type: 3}
 --- !u!82 &1244847331
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2360,6 +2361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e8d192ccbf3d46910aadb2be03637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConstellationDrawer: {fileID: 0}
+  Stars: {fileID: 0}
+  glasMaterial: {fileID: 0}
+  glasEmissoionColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1504743788
 Transform:
   m_ObjectHideFlags: 0

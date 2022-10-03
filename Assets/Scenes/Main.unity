@@ -2226,6 +2226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
+    - target: {fileID: 4149248693094207156, guid: 883517e5134fa4446923f81fa64fd1e0, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 961739752}
     - target: {fileID: 7198138948374739333, guid: 883517e5134fa4446923f81fa64fd1e0, type: 3}
       propertyPath: dayAnimator
       value: 
@@ -3210,3 +3214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e8d192ccbf3d46910aadb2be03637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConstellationDrawer: {fileID: 0}
+  Stars: {fileID: 0}
+  glasMaterial: {fileID: 0}
+  glasEmissoionColor: {r: 0, g: 0, b: 0, a: 0}

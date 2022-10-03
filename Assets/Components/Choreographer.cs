@@ -24,6 +24,7 @@ public class Choreographer : MonoBehaviour
     public float fluffAnimatorSpeed = 1.0f;
     
     public AudioClip choirSound;
+    public AudioClip portalSound;
 
     private Dictionary<int, Constellation> referenceConstellation;
     private Constellation visibleConstellation;
@@ -110,5 +111,10 @@ public class Choreographer : MonoBehaviour
     void Choir()
     {
         GetComponent<AudioSource>().PlayOneShot(choirSound);
+    }
+    
+    void Portal()
+    {
+        GetComponent<AudioSource>().PlayOneShot(portalSound);
     }
 }
