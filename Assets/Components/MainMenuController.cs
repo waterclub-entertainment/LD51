@@ -3,8 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
 
+    public GameObject exitButton;
+
     void OnEnable() {
         Time.timeScale = 0;
+        if (exitButton != null && Application.platform == RuntimePlatform.WebGLPlayer) {
+            exitButton.SetActive(false);
+        }
     }
 
     void OnDisable() {

@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Continue
       objectReference: {fileID: 0}
+    - target: {fileID: 5783160308063155963, guid: eca966b933352c47e8db7f54588524a5, type: 3}
+      propertyPath: exitButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6243916061318875022, guid: eca966b933352c47e8db7f54588524a5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 19.099976
