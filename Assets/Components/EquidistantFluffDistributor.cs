@@ -23,6 +23,8 @@ public class EquidistantFluffDistributor : MonoBehaviour
             Vector3 p = new Vector3((float)Math.Cos(2 * Math.PI * pos * rots), 0.0f, (float)Math.Sin(2 * Math.PI * pos * rots)) * distance + referenceCenter.transform.position + offset;
             child.position = p;
 
+            Debug.Log(p);
+
             child.up = Vector3.Normalize(referenceCenter.transform.position - child.position);
             pos += factor;
 

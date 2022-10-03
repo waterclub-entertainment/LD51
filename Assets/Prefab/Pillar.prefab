@@ -151,6 +151,7 @@ MonoBehaviour:
   GoalTarget: {fileID: 0}
   curveHeight: 2
   invert: 1
+  offsetLocal: 1
 --- !u!1 &2560314849645228430
 GameObject:
   m_ObjectHideFlags: 0
