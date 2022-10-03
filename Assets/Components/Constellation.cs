@@ -131,8 +131,8 @@ public class Constellation : MonoBehaviour
         Vector3 to = starReference[c.to].transform.position;
         GameObject line = GameObject.Instantiate(linePrefab, transform);
         line.transform.position = from;
-        line.transform.LookAt(to, Vector3.up);
-        line.transform.localScale = new Vector3(1, 1, (from - to).magnitude);
+        line.transform.LookAt(from + Vector3.up, to - from);
+        line.transform.localScale = new Vector3(1, (from - to).magnitude / transform.lossyScale.x, 1);
         LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
         lineRenderer.SetPosition(0, from);
         lineRenderer.SetPosition(1, to);
