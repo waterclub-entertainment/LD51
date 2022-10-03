@@ -152,6 +152,22 @@ public class Constellation : MonoBehaviour
         return false;
     }
     
+    //TODO slow as shit maybe theres a better way for movign the constellation
+    public void UpdateConnectionPositions()
+    {
+        if (lines != null)
+        {
+            foreach (Transform child in transform)
+            {
+                RemoveConnection(child.gameObject);
+            }
+            foreach (Constellation.Connection c in Connections)
+            {
+                AddConnection(c);
+            }
+        }
+    }
+
     public void Clear() {
         foreach (GameObject line in lines.Values) {
             GameObject.Destroy(line);
