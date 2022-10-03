@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 882583484}
-  m_IndirectSpecularColor: {r: 0.45143002, g: 0.50077236, b: 0.5715264, a: 1}
+  m_IndirectSpecularColor: {r: 0.45142937, g: 0.50077146, b: 0.571525, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1822,6 +1822,7 @@ MonoBehaviour:
   fluffAnimatorSpeed: 1
   choirSound: {fileID: 8300000, guid: b6c0c1f70fac4074cb167624591de419, type: 3}
   portalSound: {fileID: 8300000, guid: 7c302cd434604ca49be2c6c0187f9350, type: 3}
+  doorSound: {fileID: 8300000, guid: e65f28d9fb446d8439f0f279ae9f3723, type: 3}
 --- !u!82 &1244847331
 AudioSource:
   m_ObjectHideFlags: 0

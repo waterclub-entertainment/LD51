@@ -25,6 +25,7 @@ public class Choreographer : MonoBehaviour
     
     public AudioClip choirSound;
     public AudioClip portalSound;
+    public AudioClip doorSound;
 
     private Dictionary<int, Constellation> referenceConstellation;
     private Constellation visibleConstellation;
@@ -116,5 +117,9 @@ public class Choreographer : MonoBehaviour
     void Portal()
     {
         GetComponent<AudioSource>().PlayOneShot(portalSound);
+    }
+    
+    void Door() {
+        GetComponent<AudioSource>().PlayOneShot(doorSound);
     }
 }
