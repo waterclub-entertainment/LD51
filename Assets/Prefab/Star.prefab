@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6403748585418768525}
   - component: {fileID: 7913708042552457992}
   - component: {fileID: 3985570648360994060}
+  - component: {fileID: 8354525383936467552}
   m_Layer: 6
   m_Name: Star
   m_TagString: star
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  offsetRatio: 1
 --- !u!135 &6403748585418768525
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4840,3 +4842,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!95 &8354525383936467552
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051530476232402485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9cf1c8089e4d9645b7234d12ac5bc90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
