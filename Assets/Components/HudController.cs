@@ -9,29 +9,37 @@ public class HudController : MonoBehaviour {
     public GameObject pauseMenuButton;
     public Sprite iconMaximize;
     public Sprite iconMinimize;
-    public Sprite iconMute;
-    public Sprite iconUnmute;
-    public float volume;
+    public Sprite iconMasterMute;
+    public Sprite iconMasterUnmute;
+    public Sprite iconMusicMute;
+    public Sprite iconMusicUnmute;
+    public Slider MasterSlider;
+    public Slider MusicSlider;
     
     private bool fullscreen = false;
 
-    public void OnToggleMute(Image image) {
+    public void OnToggleMuteMaster(Image image) {
         float volume;
         mixer.GetFloat("MasterVolume", out volume);
-        if (volume >= -40f) {
+        if (volume >= -79f) {
             mixer.SetFloat("MasterVolume", -80f);
-            image.sprite = iconUnmute;
+            image.sprite = iconMasterMute;
         } else {
-            mixer.SetFloat("MasterVolume", 0f);
-            image.sprite = iconMute;
+            mixer.SetFloat("MasterVolume", MasterSlider.value);
+            image.sprite = iconMasterUnmute;
         }
     }
 
-    public void OnChangeVolume(float Volume)
+   
+    public void OnChangeVolumeMaster(Image image)
     {
-        mixer.SetFloat("MasterVolume", Volume);
+        image.sprite = iconMasterUnmute;
+        mixer.SetFloat("MasterVolume", MasterSlider.value);
+        Debug.Log(MasterSlider.value);
     }
-    
+
+
+
     public void OnToggleFullscreen(Image image) {
         fullscreen = !fullscreen;
         Screen.fullScreen = fullscreen;
