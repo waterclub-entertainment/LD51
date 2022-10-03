@@ -3,7 +3,10 @@ guid: 804e8d192ccbf3d46910aadb2be03637
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ConstellationDrawer: {fileID: 999839463132559926, guid: 5e613d32a8719590b8cd3cb4c422a2b9, type: 3}
+  - Stars: {fileID: 5013977504489164828, guid: 0e2d2c6a3ee31214c8958be3af2d0cd1, type: 3}
+  - glasMaterial: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
