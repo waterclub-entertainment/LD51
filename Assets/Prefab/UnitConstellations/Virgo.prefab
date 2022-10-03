@@ -60,5 +60,9 @@ MonoBehaviour:
     to: 60
   - from: 51
     to: 60
+  - from: 43
+    to: 44
+  - from: 43
+    to: 39
   root: {fileID: 0}
   linePrefab: {fileID: 7655429788588616360, guid: 034c7c6b6f0db1c0bb14ba252accf07d, type: 3}
