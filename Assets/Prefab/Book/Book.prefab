@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 873535713865530412}
   - component: {fileID: 633809554100257178}
   - component: {fileID: 3314516034225822781}
-  - component: {fileID: 7110561868217486974}
   m_Layer: 0
   m_Name: rechts
   m_TagString: Untagged
@@ -101,33 +100,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4707733091017757388, guid: b07ca1603b8f066479b4c6130b5f88ee, type: 3}
---- !u!114 &7110561868217486974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2218200282616045119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ac5e968800aea22ba6d94eba567386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7198138948374739333}
-        m_TargetAssemblyTypeName: BookController, Assembly-CSharp
-        m_MethodName: NextPage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2358289645764417730
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +228,6 @@ GameObject:
   - component: {fileID: 5326381535745366341}
   - component: {fileID: 130304404463214735}
   - component: {fileID: 1720064963847376327}
-  - component: {fileID: 6880888889790648507}
   m_Layer: 0
   m_Name: left
   m_TagString: Untagged
@@ -345,33 +316,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5462847723828066589, guid: b07ca1603b8f066479b4c6130b5f88ee, type: 3}
---- !u!114 &6880888889790648507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354525340914840751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ac5e968800aea22ba6d94eba567386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7198138948374739333}
-        m_TargetAssemblyTypeName: BookController, Assembly-CSharp
-        m_MethodName: PreviousPage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &5711562304976413428
 PrefabInstance:
   m_ObjectHideFlags: 0
