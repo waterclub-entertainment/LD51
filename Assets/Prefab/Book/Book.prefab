@@ -233,7 +233,17 @@ MonoBehaviour:
   nextImage: {fileID: 3014701076223475556}
   images:
   - {fileID: 2100000, guid: 36a06648b2bffcfdda42fc82628c2fad, type: 2}
-  - {fileID: 2100000, guid: 36a06648b2bffcfdda42fc82628c2fad, type: 2}
+  - {fileID: 2100000, guid: 2ec3e0ed984abf943a23071f1a06a659, type: 2}
+  - {fileID: 2100000, guid: a46000201d99b004a9270c1042430fc1, type: 2}
+  - {fileID: 2100000, guid: 0da11feb6f2ab8a40b9e4f41c19cc7db, type: 2}
+  - {fileID: 2100000, guid: 670b467ae75f1dd4abf9b4f63041c521, type: 2}
+  - {fileID: 2100000, guid: 2d792a348f7c7a24ab230610620ec4ba, type: 2}
+  - {fileID: 2100000, guid: 2ff29821ba50b2d4b980f803333ee2de, type: 2}
+  - {fileID: 2100000, guid: 4b41a8834051d5245b7032062b909e21, type: 2}
+  - {fileID: 2100000, guid: 437cf4f30d87a62438a830a334a41ba9, type: 2}
+  - {fileID: 2100000, guid: dcb7b992cf23a294eb69843fb6ff6a3b, type: 2}
+  - {fileID: 2100000, guid: 64d3834928bff5244a085a5a27393378, type: 2}
+  - {fileID: 2100000, guid: 09e085db571df944293556496c93a154, type: 2}
 --- !u!1 &6354525340914840751
 GameObject:
   m_ObjectHideFlags: 0
