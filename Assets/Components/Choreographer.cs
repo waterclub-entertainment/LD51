@@ -1,63 +1,97 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Choreographer : MonoBehaviour
 {
+    [Serializable]
+    public class ConstellationMap
+    {
+        public GameObject summoner;
+        public GameObject constellation;
+        public Material decal;
+    }
     public GameObject StarRoot;
-    public GameObject[] constellationMap;
-    private Constellation referenceConstellation = null;
+    public ConstellationMap[] constellationMap;
+    public int[] test;
+    public GameObject SymbolPlane;
+
+
+    public float fluffAnimatorSpeed = 1.0f;
+
+    private Dictionary<int, Constellation> referenceConstellation;
+    private Constellation visibleConstellation;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        referenceConstellation = new Dictionary<int, Constellation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    private void UnloadConstellation()
+    private void UnloadConstellation(int index)
     {
-        if (referenceConstellation != null)
-        {
-            GameObject.Destroy(referenceConstellation.gameObject);
-        }
+        GameObject.Destroy(referenceConstellation[index].gameObject);
+        referenceConstellation.Remove(index);
 
         Debug.Log("Unloaded Constellation");
     }
 
     private void LoadConstellation(int index)
     {
-        UnloadConstellation();
-
-        GameObject reference = GameObject.Instantiate(constellationMap[index], transform);
+        Debug.Log("Loading Constellation " + index.ToString());
+        GameObject reference = GameObject.Instantiate(constellationMap[index].constellation, transform);
         reference.tag = "constellation";
 
-        referenceConstellation = reference.GetComponent<Constellation>();
-        referenceConstellation.root = StarRoot;
+        Constellation c = reference.GetComponent<Constellation>();
+        c.root = StarRoot;
+        reference.SetActive(false);
+
+        referenceConstellation[index] = c;
 
         Debug.Log("Loaded Constellation " + index.ToString());
     }
 
     void SetStarConstellation(int constellation)
     {
-        if (constellation >= 0)
-        {
             LoadConstellation(constellation);
-
             StarRoot.GetComponent<IntroStarAnimator>().SetConstellation(referenceConstellation);
-        }
-        else
-        {
-            UnloadConstellation();
-            StarRoot.GetComponent<IntroStarAnimator>().SetConstellation(null);
-        }
     }
-    void ShowConstellation()
+    void ShowDecal(int constellation)
     {
-        StarRoot.GetComponent<IntroStarAnimator>().ShowConstellation();
+        if (visibleConstellation != null)
+        {
+            visibleConstellation.gameObject.SetActive(false);
+        }
+        visibleConstellation = referenceConstellation[constellation];
+        visibleConstellation.gameObject.SetActive(true);
+        visibleConstellation.UpdateConnectionPositions();
+
+        Material[] mats = new Material[1] { constellationMap[constellation].decal};
+        SymbolPlane.GetComponent<MeshRenderer>().materials = mats;
+        SymbolPlane.SetActive(true);
+    }
+    void UnsetStarConstellation(int constellation)
+    {
+        if (referenceConstellation[constellation] == visibleConstellation)
+        {
+            visibleConstellation = null;
+        }
+
+        UnloadConstellation(constellation);
+        StarRoot.GetComponent<IntroStarAnimator>().SetConstellation(referenceConstellation);
+    }
+
+    void FallFluff(int fluff)
+    {
+        Animator aniRef = constellationMap[fluff].summoner.GetComponent<Animator>();
+        aniRef.enabled = true;
+        aniRef.speed = fluffAnimatorSpeed;
     }
 }
