@@ -31,6 +31,13 @@ public class EquidistantFluffDistributor : MonoBehaviour
                 child.gameObject.GetComponent<Animator>().enabled = false;
             if (child.gameObject.GetComponent<IntroFluffMover>() != null)
                 child.gameObject.GetComponent<IntroFluffMover>().SetBasePos(p);
+            foreach (Transform c1 in child)
+            {
+                if (c1.gameObject.GetComponent<Animator>() != null)
+                    c1.gameObject.GetComponent<Animator>().enabled = false;
+                if (c1.gameObject.GetComponent<IntroFluffMover>() != null)
+                    c1.gameObject.GetComponent<IntroFluffMover>().SetBasePos(p);
+            }
         }
     }
 }
