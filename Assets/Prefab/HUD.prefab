@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 2f8f5b3673aba9a9b8fabb9164ec974c, type: 2}
+  pauseMenu: {fileID: 0}
+  pauseMenuButton: {fileID: 1825654988922106908}
   iconMaximize: {fileID: 21300000, guid: e33b64cf053610782b00e667e78e498b, type: 3}
   iconMinimize: {fileID: 21300000, guid: 77e614b151b54e95fa5973d431a446ce, type: 3}
   iconMute: {fileID: 21300000, guid: 27fcc5e7e7f792a9880c33730357c040, type: 3}
@@ -242,13 +244,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 234610559956114008}
+        m_TargetAssemblyTypeName: HudController, Assembly-CSharp
+        m_MethodName: OnTogglePauseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

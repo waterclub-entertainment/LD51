@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class HudController : MonoBehaviour {
 
     public AudioMixer mixer;
+    public GameObject pauseMenu;
+    public GameObject pauseMenuButton;
     public Sprite iconMaximize;
     public Sprite iconMinimize;
     public Sprite iconMute;
@@ -31,6 +33,22 @@ public class HudController : MonoBehaviour {
             image.sprite = iconMinimize;
         } else {
             image.sprite = iconMaximize;
+        }
+    }
+    
+    public void OnTogglePauseMenu() {
+        pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+    }
+    
+    void Update() {
+        if (Time.timeScale == 0 && !pauseMenu.activeInHierarchy) {
+            // Main menu is open
+            pauseMenuButton.SetActive(false);       
+        } else {
+            pauseMenuButton.SetActive(true);
+            if (Input.GetButtonDown("Cancel")) {
+                OnTogglePauseMenu();
+            }
         }
     }
 
