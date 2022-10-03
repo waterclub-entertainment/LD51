@@ -21,6 +21,11 @@ public class IntroFluffMover : MonoBehaviour
         GoalPos = GoalTarget.transform.position;
     }
 
+    public void SetBasePos(Vector3 b)
+    {
+        BasePos = b;
+    }
+
     void OnDrawGizmos()
     {
         Start();
