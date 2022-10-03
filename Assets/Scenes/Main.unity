@@ -2110,6 +2110,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: f50520378159bc246893a2fd212bd193, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+--- !u!1 &1039816363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4568447926457884090, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+  m_PrefabInstance: {fileID: 1034939387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,6 +3069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5ec70c3b71857e2803e980a201cdb4, type: 3}
+--- !u!1 &2017301060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3234727430248770776, guid: 82b561fab2f8fb946aebdcbce7f1767d, type: 3}
+  m_PrefabInstance: {fileID: 1034939387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2110451914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3210,3 +3220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e8d192ccbf3d46910aadb2be03637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConstellationDrawer: {fileID: 2017301060}
+  Stars: {fileID: 1039816363}
+  glasMaterial: {fileID: 2100000, guid: 1bb4a8f51d046064196ec5177d157f4b, type: 2}
+  glasEmissoionColor: {r: 0.113, g: 0.643, b: 0.153, a: 0}
